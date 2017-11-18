@@ -7,10 +7,27 @@ global-styling:
   dependencies:
     - iu/iu-framework
 
+contextual:
+  css:
+    theme:
+      css/components/contextual.css: {}
+
 local-tasks:
   css:
     theme:
       css/components/local-tasks.css: {}
+
+settings-tray:
+  css:
+    theme:
+      # Set the weight higher than that of settings_tray.theme.css to ensure
+      # proper override. Reasess after https://www.drupal.org/node/1945262
+      css/components/settings-tray.css: { weight: 10 }
+
+toolbar:
+  css:
+    theme:
+      css/components/toolbar.css: {}
 
 modernizr:
   js:

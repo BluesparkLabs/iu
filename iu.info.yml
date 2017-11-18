@@ -7,6 +7,15 @@ base theme: stable
 libraries:
   - iu/global-styling
 
+libraries-extend:
+  # Improve interoperability between IU Framework and various Drupal features.
+  toolbar/toolbar:
+    - iu/toolbar
+  settings_tray/drupal.settings_tray:
+    - iu/settings-tray
+  contextual/drupal.contextual-links:
+    - iu/contextual
+
 regions:
   # 1. Standard Drupal regions
   # 2. Custom regions for IU Framework

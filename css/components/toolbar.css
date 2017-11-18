@@ -1,0 +1,15 @@
+.toolbar button {
+  border-radius: 0;
+}
+
+@media screen and (min-width: 40em) {
+  .toolbar-menu {
+    font-size: 1em;
+  }
+}
+
+@media screen and (min-width: 64.0625em) {
+  .toolbar-fixed nav.main.is-sticky {
+    top: 2.4rem !important;
+  }
+}
