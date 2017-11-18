@@ -7,6 +7,11 @@ global-styling:
   dependencies:
     - iu/iu-framework
 
+local-tasks:
+  css:
+    theme:
+      css/components/local-tasks.css: {}
+
 modernizr:
   js:
     //assets.iu.edu/web/1.5/libs/modernizr.min.js: { type: external, minified: true }

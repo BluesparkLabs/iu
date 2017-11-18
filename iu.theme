@@ -10,12 +10,60 @@ function iu_preprocess_block(&$variables){
  * Prepares variables for `menu.html.twig`.
  */
 function iu_preprocess_menu(&$variables) {
+  $menu_name = isset($variables['menu_name']) ? $variables['menu_name'] : '';
+
+  # Special case triggers to hide first/last menu items on desktop, and make
+  # them icons on the mobile sticky menu.
+  $has_search = FALSE;
+  $has_home = FALSE;
+  if (strpos('main', $menu_name) !== FALSE) {
+    @$last = &end($variables['items']);
+    if (!$last['url']->isRouted() && $last['url']->getUri() == '/search') {
+      $last['attributes']->addClass('show-on-sticky search');
+      $attrs = $last['url']->getOption('attributes');
+      $attrs['class'][] = 'search-toggle';
+      $last['url']->setOption('attributes', $attrs);
+      $has_search = TRUE;
+    }
+
+    @$first = &reset($variables['items']);
+    if ($first['url']->isRouted() && $first['url']->getRouteName() == '<front>') {
+      $first['attributes']->addClass('show-on-sticky home');
+      $has_home = TRUE;
+    }
+  }
+  elseif (strpos($menu_name, 'social') !== FALSE) {
+    $variables['attributes']['class'][] = 'social';
+  }
+
+  # Add first/last and two/two-left classes on all menu items.
+  $i = 1;
+  $count = count($variables['items']);
+  foreach ($variables['items'] as &$item) {
+    # The order of these if/elseifs are relevent, and prevent "last two" or
+    # "first two-left" appearing on the same element.
+    if (($i == $count && !$has_search) || ($i == ($count-1) && $has_search)) {
+      $item['attributes']->addClass('last');
+    }
+    elseif (($i == 2 && !$has_home) || ($i == 3 && $has_home)) {
+      $item['attributes']->addClass('two');
+    }
+    if (($i == 1 && !$has_home) || ($i == 2 && $has_home)) {
+      $item['attributes']->addClass('first');
+    }
+    elseif (($i == ($count-1) && !$has_search) || ($i == ($count-2) && $has_search)) {
+      $item['attributes']->addClass('two-left');
+    }
+    $i++;
+  }
 }
 
 /**
  * Prepares variables for `menu-local-task.html.twig`.
  */
 function iu_preprocess_menu_local_task(&$variables) {
+  $variables['attributes']['class'][] = 'nav-item';
+  $variables['link']['#options']['attributes']['class'][] = 'nav-link' . (!empty($variables['is_active']) ? ' active' : '');
 }
 
 /**

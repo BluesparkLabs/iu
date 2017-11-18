@@ -1,0 +1,30 @@
+.local-tasks {
+  margin: 0 0 25px;
+  padding: 0;
+  list-style: none;
+  font-size: .9rem;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+.local-tasks li {
+  width: auto;
+  float: left;
+  padding: .1em .7em .1em 0;
+}
+
+.local-tasks li>a {
+  padding: .3em 1em;
+  border-radius: 1.5em;
+  border: 2px solid #2199e8;
+  color: #2199e8;
+  transition: all .2s ease-out;
+  display: block;
+}
+
+.local-tasks li>a:hover,
+.local-tasks li>a:focus,
+.local-tasks li.active>a {
+  background: #2199e8;
+  color: #fff;
+}
