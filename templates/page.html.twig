@@ -72,13 +72,24 @@
 
   </main>
 
-  {{ page.belt_social_media }}
+  {% if page.belt_nav or page.belt_social_media %}
+  <div class="section bg-mahogany bg-dark dark belt"><div class="row pad">
+
+    {{ page.belt_nav }}
+
+    {{ page.belt_social_media }}
+
+  </div></div>
+  {% endif %}
 
   {% if page.skirt_nav or page.skirt_connect %}
-    <div class="section section--skirt bg-mahogany bg-dark dark skirt"><div class="row pad">
+  <div class="section bg-mahogany bg-dark dark skirt"><div class="row pad">
+
     {{ page.skirt_nav }}
+
     {{ page.skirt_connect }}
-    </div></div>
+
+  </div></div>
   {% endif %}
 
   {% include '@iu/parts/footer.html.twig' %}

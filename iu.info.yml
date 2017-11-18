@@ -6,3 +6,21 @@ base theme: stable
 
 libraries:
   - iu/global-styling
+
+regions:
+  # 1. Standard Drupal regions
+  # 2. Custom regions for IU Framework
+  header:             'Header'                    # 1
+  primary_menu:       'Main menu'                 # 1
+  secondary_menu:     'Secondary menu'            # 1
+  highlighted:        'Highlighted'               # 1
+  help:               'Help'                      # 1
+  section_nav:        'Section Nav'               # 2
+  breadcrumb:         'Breadcrumb'                # 1
+  page_title:         'Page Title'                # 2
+  content:            'Content'                   # 1
+  footer:             'Footer'                    # 1
+  belt_tools:         'Footer Tools'              # 2
+  belt_social_media:  'Footer Social Media'       # 2
+  skirt_nav:          'Footer Skirt Nav'          # 2
+  skirt_connect:      'Footer Skirt Connect'      # 2
