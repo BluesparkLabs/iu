@@ -1,0 +1,12 @@
+{#
+ /**
+  * Override default Drupal branding block to prevent site_logo and
+  * site_slogan from appearing, in accordance with IU styleguide.
+  */
+#}
+<div{{ attributes.addClass('clearfix') }}>
+{{ title_prefix }}{{ title_suffix }}
+<h1>
+  <a class="title" href="/" itemprop="department">{{ site_name }}</a>
+</h1>
+</div>
