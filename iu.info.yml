@@ -1,0 +1,8 @@
+name: IU
+description: A consistent and accessible base theme compliant with the <a href="//styleguide.iu.edu" target="_blank">IU Website Style Guide</a> and <a href="//brand.iu.edu" target="_blank">IU brand guidelines</a>.
+
+type: theme
+base theme: stable
+
+libraries:
+  - iu/global-styling
