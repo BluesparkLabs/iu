@@ -72,3 +72,20 @@ function iu_preprocess_menu_local_task(&$variables) {
 function iu_preprocess_form(&$variables) {
 
 }
+
+/**
+ * Prepares variables for `input.html.twig`.
+ */
+function iu_preprocess_input(&$variables) {
+  if (!empty($variables['element']['#button_type'])) {
+    switch ($variables['element']['#button_type']) {
+      case 'primary':
+        $variables['attributes']['class'][] = 'primary';
+        break;
+
+      case 'danger':
+        $variables['attributes']['class'][] = 'warning';
+        break;
+    }
+  }
+}
