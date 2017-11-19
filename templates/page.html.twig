@@ -75,9 +75,15 @@
   {% if page.belt_nav or page.belt_social_media %}
   <div class="section bg-mahogany bg-dark dark belt"><div class="row pad">
 
-    {{ page.belt_nav }}
+    <div class="one-half belt-nav">
+      {{ page.belt_nav }}
+    </div>
 
-    {{ page.belt_social_media }}
+    <div class="one-half belt-social-media">
+      <div class="border invert">
+        {{ page.belt_social_media }}
+      </div>
+    </div>
 
   </div></div>
   {% endif %}
