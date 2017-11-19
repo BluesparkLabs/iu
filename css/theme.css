@@ -16,3 +16,7 @@
 .alert ul {
   font-size: 1rem;
 }
+
+.alert .backtrace {
+  font-size: .825rem;
+}
