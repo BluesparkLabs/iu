@@ -70,10 +70,5 @@ function iu_preprocess_menu_local_task(&$variables) {
  * Prepares variables for `form.html.twig`.
  */
 function iu_preprocess_form(&$variables) {
-}
 
-/**
- * Prepares variables for `status-messages.html.twig`.
- */
-function iu_preprocess_status_messages(&$variables) {
 }

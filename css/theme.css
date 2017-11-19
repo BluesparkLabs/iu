@@ -4,3 +4,11 @@
     padding-top: 50px;
   }
 }
+
+.section.help {
+  padding: 0 0 1.6em;
+}
+
+.alert + .alert {
+  margin-top: .8em;
+}
