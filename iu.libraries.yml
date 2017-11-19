@@ -29,6 +29,11 @@ toolbar:
     theme:
       css/components/toolbar.css: {}
 
+user:
+  css:
+    theme:
+      css/components/user.css: {}
+
 modernizr:
   js:
     //assets.iu.edu/web/1.5/libs/modernizr.min.js: { type: external, minified: true }
