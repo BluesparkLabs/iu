@@ -10,7 +10,7 @@ select {
 /* Drupal styles some form item labels as legends when grouped */
 legend {
   font-family: BentonSansBold, Arial, sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   color: #191919;
 }
 
@@ -61,4 +61,26 @@ legend {
 
 .confirmation .form-action {
   margin-top: 1rem;
+}
+
+.machine-name-source + .field-suffix {
+  display: block;
+  margin: -.5rem 0 1rem;
+}
+
+.machine-name-value + .admin-link {
+  margin-left: .4rem;
+}
+
+button.link {
+  color: #006298;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+}
+
+button.link:hover,
+button.link:focus {
+  color: #01426a;
 }

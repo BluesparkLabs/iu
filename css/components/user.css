@@ -10,7 +10,7 @@
 }
 
 .password-strength__meter {
-  margin-top: .5em;
+  margin-top: .25em;
   background-color: #ebeae4;
 }
 .password-strength__indicator {
@@ -36,11 +36,27 @@
   font-size: .875rem;
 }
 
+.password-parent {
+  overflow: hidden;
+}
+
 .password-confirm,
 .password-field,
 .password-strength,
 .password-confirm-match {
-  width: 55%;
+  width: 48%;
+  float: left;
+}
+
+.password-strength,
+.password-confirm-match,
+.password-confirm + .password-confirm {
+  float: right;
+}
+
+.password-confirm-match,
+.password-confirm + .password-confirm {
+  margin-top: .5rem;
 }
 
 .password-suggestions {
@@ -57,7 +73,6 @@
 .password-parent {
   clear: left; /* LTR */
   margin: 0;
-  max-width: 33em;
   overflow: hidden;
 }
 [dir="rtl"] .confirm-parent,
@@ -67,7 +82,7 @@
 
 /* Styling for the status indicator of the passwords match test.  */
 .password-confirm .ok {
-  color: #009933;
+  color: #093;
   font-weight: bold;
 }
 .password-confirm .error {
