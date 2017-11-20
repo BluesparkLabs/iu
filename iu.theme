@@ -113,7 +113,7 @@ function iu_preprocess_pager(&$variables) {
   // Needs approval from someone familiar with Drupal pagers to determine
   // whether this RegEx can be considered safe or not, or maybe there's a
   // better way to figure this out.
-  if ($variables['items']['last']) {
+  if (!empty($variables['items']['last'])) {
     if (preg_match('/(\d+)/', $variables['items']['last']['href'], $matches)) {
       $variables['total'] = ((int) $matches[0]) + 1;
     }
