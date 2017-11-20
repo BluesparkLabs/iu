@@ -20,3 +20,10 @@
 .alert .backtrace {
   font-size: .825rem;
 }
+
+.marker {
+  font-size: .9rem;
+  background: rgba(178, 178, 178, .4);
+  border-radius: .3em;
+  padding: .1em .5em;
+}
