@@ -2,7 +2,9 @@ global-styling:
   css:
     theme:
       css/theme.css: {}
+      css/components/alert.css: {}
       css/components/form.css: {}
+      css/components/marker.css: {}
   js:
     js/init.js: {}
   dependencies:
