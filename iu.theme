@@ -4,6 +4,20 @@
  * Prepares variables for `block.html.twig`.
  */
 function iu_preprocess_block(&$variables){
+  if (isset($variables['elements']['#id'])) {
+    $block_id = $variables['elements']['#id'];
+    $block = \Drupal\block\Entity\Block::load($block_id);
+
+    if ($block) {
+      $region = $block->getRegion();
+      $variables['elements']['#configuration']['region'] = $region;
+      $variables['configuration']['region'] = $region;
+
+      if ($region == 'secondary_menu') {
+        $variables['content']['#attributes']['class'][] = 'inline separators';
+      }
+    }
+  }
 }
 
 /**

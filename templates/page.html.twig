@@ -44,11 +44,11 @@
  */
 #}
 
-<div class="off-canvas-wrap" data-offcanvas>
+<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
 
   {% include '@iu/parts/header-iub.html.twig' %}
 
-<div class="inner-wrap">
+<div class="off-canvas-content" data-off-canvas-content>
 
   {{ page.header }}
 
@@ -100,10 +100,10 @@
 
   {% include '@iu/parts/footer.html.twig' %}
 
-</div>{# /.inner-wrap #}
+</div>{# /.off-canvas-content #}
 
 <div class="right-off-canvas-menu show-for-medium-down">
   <!-- @todo: offcanvas: add mobile menu -->
 </div>
 
-</div>{# /.off-canvas-wrap #}
+</div>{# /.off-canvas-wrapper-inner #}
