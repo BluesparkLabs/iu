@@ -54,3 +54,11 @@ legend {
 .form-item-text-format-value + .filter-wrapper {
   margin-top: -1rem;
 }
+
+.confirmation {
+  font-size: 1.25rem;
+}
+
+.confirmation .form-action {
+  margin-top: 1rem;
+}
