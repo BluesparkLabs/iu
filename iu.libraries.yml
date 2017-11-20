@@ -17,6 +17,11 @@ local-tasks:
     theme:
       css/components/local-tasks.css: {}
 
+progress:
+  css:
+    component:
+      css/components/progress.css: {}
+
 settings-tray:
   css:
     theme:

@@ -17,6 +17,8 @@ libraries-extend:
     - iu/contextual
   user/drupal.user:
     - iu/user
+  core/drupal.progress:
+    - iu/progress
 
 regions:
   # 1. Standard Drupal regions
