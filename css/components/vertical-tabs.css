@@ -1,0 +1,66 @@
+.vertical-tabs {
+  margin: 1rem 0 1rem 23%;
+  border: 0;
+}
+
+.vertical-tabs__menu {
+  font-size: 1rem;
+  width: 30%;
+  margin: -1px 0 -1px -30%;
+  background-color: #edecea;
+  border: 0;
+}
+
+.vertical-tabs__panes {
+  padding: .6rem 0 .6rem 2rem;
+}
+
+.vertical-tabs__menu-item {
+  background: none;
+  border: 0;
+}
+
+.vertical-tabs__menu-item.is-selected {
+  background: none;
+}
+
+.vertical-tabs__menu-item a {
+  position: relative;
+  display: block;
+  color: #4a3c31;
+  border-bottom: 1px solid #fff;
+  padding: .5rem 1rem;
+  transition: all .3s;
+}
+
+.vertical-tabs__menu-item a:hover,
+.vertical-tabs__menu-item a:focus {
+  background-color: #b7b1ad;
+  color: #16120f;
+  outline: none;
+}
+
+.vertical-tabs__menu-item.is-selected a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 3px;
+  background: #900;
+}
+
+.vertical-tabs__menu-item .vertical-tabs__menu-item-title,
+.vertical-tabs__menu-item.is-selected .vertical-tabs__menu-item-title {
+  color: #4a3c31;
+  font-family: BentonSans, Arial, sans-serif;
+  font-weight: 400;
+  transition: all .3s;
+}
+
+.vertical-tabs__menu-item a:focus .vertical-tabs__menu-item-title,
+.vertical-tabs__menu-item a:active .vertical-tabs__menu-item-title,
+.vertical-tabs__menu-item a:hover .vertical-tabs__menu-item-title {
+  text-decoration: none;
+  color: #16120f;
+}

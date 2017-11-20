@@ -19,6 +19,8 @@ libraries-extend:
     - iu/user
   core/drupal.progress:
     - iu/progress
+  core/drupal.vertical-tabs:
+    - iu/vertical-tabs
 
 regions:
   # 1. Standard Drupal regions

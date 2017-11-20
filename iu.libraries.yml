@@ -39,6 +39,11 @@ user:
     theme:
       css/components/user.css: {}
 
+vertical-tabs:
+  css:
+    theme:
+      css/components/vertical-tabs.css: {}
+
 modernizr:
   js:
     //assets.iu.edu/web/1.5/libs/modernizr.min.js: { type: external, minified: true }
