@@ -4,6 +4,11 @@
  */
 
 /* Visual styling for the Password strength indicator */
+.password-confirm,
+.password-strength {
+  margin-bottom: 1rem;
+}
+
 .password-strength__meter {
   margin-top: .5em;
   background-color: #ebeae4;
@@ -24,6 +29,11 @@
 }
 .password-strength__indicator.is-strong {
   background-color: #009933;
+}
+
+.password-strength__title,
+.password-strength__match {
+  font-size: .875rem;
 }
 
 .password-confirm,

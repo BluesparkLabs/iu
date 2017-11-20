@@ -2,6 +2,7 @@ global-styling:
   css:
     theme:
       css/theme.css: {}
+      css/components/form.css: {}
   js:
     js/init.js: {}
   dependencies:

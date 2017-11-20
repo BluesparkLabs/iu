@@ -1,0 +1,56 @@
+
+.fieldgroup {
+  margin-bottom: 1rem;
+}
+
+select {
+  box-sizing: border-box;
+}
+
+/* Drupal styles some form item labels as legends when grouped */
+legend {
+  font-family: BentonSansBold, Arial, sans-serif;
+  font-weight: 400;
+  color: #191919;
+}
+
+.fieldgroup>legend {
+  margin-bottom: 0;
+  font-size: .875rem;
+}
+
+
+.form-checkboxes .form-item,
+.form-radios .form-item {
+  margin: .5rem 0;
+}
+
+.form-checkboxes [type=checkbox],
+.form-radios [type=radio] {
+  margin: 0;
+}
+
+.form-checkboxes input[type=checkbox]+label,
+.form-radios input[type=radio]+label {
+  padding: 0;
+}
+
+.filter-guidelines {
+  display: none;
+}
+
+.form-item .description {
+  font-size: .875rem;
+  margin-top: -.75rem;
+  margin-bottom: 1rem;
+  color: #847d7d;
+}
+
+.form-checkboxes + .description,
+.form-radios + .description {
+  margin-top: 0;
+}
+
+.form-item-text-format-value + .filter-wrapper {
+  margin-top: -1rem;
+}
