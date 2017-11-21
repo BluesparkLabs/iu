@@ -38,6 +38,7 @@ regions:
   content:            'Content'                   # 1
   footer:             'Footer'                    # 1
   belt_tools:         'Footer Tools'              # 2
-  belt_social_media:  'Footer Social Media'       # 2
-  skirt_nav:          'Footer Skirt Nav'          # 2
-  skirt_connect:      'Footer Skirt Connect'      # 2
+  belt_nav:           'Footer Belt: Inline Nav'   # 2
+  belt_social_media:  'Footer Belt: Social Media' # 2
+  skirt_nav:          'Footer Skirt: Column Nav'  # 2
+  skirt_connect:      'Footer Skirt: Connect'     # 2
