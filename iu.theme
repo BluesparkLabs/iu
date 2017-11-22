@@ -118,7 +118,10 @@ function iu_preprocess_pager(&$variables) {
       $variables['total'] = ((int) $matches[0]) + 1;
     }
   }
-  else {
+  elseif (!empty($variables['current'])) {
     $variables['total'] = $variables['current'];
+  }
+  else {
+    $variables['total'] = t('several');
   }
 }
