@@ -23,6 +23,14 @@ libraries-extend:
     - iu/progress
   core/drupal.vertical-tabs:
     - iu/vertical-tabs
+  system/base:
+    - iu/tabledrag
+  quickedit/quickedit:
+    - iu/quickedit
+  paragraphs/drupal.paragraphs.admin:
+    - iu/paragraphs.admin
+  core/drupal.dropbutton:
+    - iu/dropbutton
 
 regions:
   # 1. Standard Drupal regions

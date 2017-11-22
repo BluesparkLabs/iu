@@ -91,6 +91,7 @@ function iu_preprocess_form(&$variables) {
  * Prepares variables for `input.html.twig`.
  */
 function iu_preprocess_input(&$variables) {
+
   if (!empty($variables['element']['#button_type'])) {
     switch ($variables['element']['#button_type']) {
       case 'primary':
@@ -101,6 +102,36 @@ function iu_preprocess_input(&$variables) {
         $variables['attributes']['class'][] = 'warning';
         break;
     }
+  }
+
+  $classes = &$variables['attributes']['class'];
+
+  if (!empty($classes) && in_array('field-add-more-submit', $classes)) {
+    $classes[] = 'small invert no-margin';
+  }
+  elseif (!empty($classes) && in_array('button', $classes)) {
+
+    if ($variables['attributes']['value']->getUntranslatedString() == 'Remove') {
+      $classes[] = 'button--remove small secondary hollow no-margin';
+    }
+  }
+}
+
+
+/**
+ * Prepares variables for `input--submit--paragraph-action.html.twig`.
+ */
+function iu_preprocess_input__submit__paragraph_action(&$variables) {
+  //var_dump($variables);
+  $classes = &$variables['attributes']['class'];
+  if (in_array('paragraphs-dropdown-action', $classes)) {
+    $classes[] = 'tiny secondary hollow no-margin';
+  }
+  if (in_array('paragraphs-icon-button', $classes)) {
+    $classes[] = 'tiny secondary hollow no-margin';
+  }
+  elseif (in_array('field-add-more-submit', $classes)) {
+    $classes[] = 'small invert no-margin';
   }
 }
 

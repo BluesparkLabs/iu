@@ -15,10 +15,20 @@ contextual:
     theme:
       css/components/contextual.css: {}
 
+dropbutton:
+  css:
+    theme:
+      css/components/dropbutton.css: {}
+
 local-tasks:
   css:
     theme:
       css/components/local-tasks.css: {}
+
+paragraphs.admin:
+  css:
+    theme:
+      css/components/paragraphs.admin.css: {}
 
 progress:
   css:
@@ -31,6 +41,13 @@ settings-tray:
       # Set the weight higher than that of settings_tray.theme.css to ensure
       # proper override. Reasess after https://www.drupal.org/node/1945262
       css/components/settings-tray.css: { weight: 10 }
+
+tabledrag:
+  css:
+    theme:
+      css/components/tabledrag.css: { weight: 10 }
+  js:
+    js/tabledrag.js: {}
 
 toolbar:
   css:
@@ -46,6 +63,11 @@ vertical-tabs:
   css:
     theme:
       css/components/vertical-tabs.css: {}
+
+quickedit:
+  css:
+    theme:
+      css/components/quickedit.css: {}
 
 modernizr:
   js:

@@ -25,6 +25,11 @@ html .contextual-region.focus {
   outline-offset: 0;
 }
 
+html .dialog-off-canvas__main-canvas.js-settings-tray-edit-mode .contextual-region:not(.quickedit-entity-active)[data-quickedit-entity-id]:hover .section,
+html .dialog-off-canvas__main-canvas.js-settings-tray-edit-mode .settings-tray-editable:hover .section {
+  background: transparent;
+}
+
 html .settings-tray-editable.quickedit-entity-active,
 html .contextual-region.quickedit-entity-active {
   outline: none !important;
