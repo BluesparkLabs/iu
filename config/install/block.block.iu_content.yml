@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - iu
+id: iu_content
+theme: iu
+region: content
+weight: -4
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content (non-nodes)'
+  provider: system
+  label_display: '0'
+visibility:
+  is_node:
+    id: is_node
+    is_node: 1
+    negate: true
+    context_mapping:
+      node: '@node.node_route_context:node'
