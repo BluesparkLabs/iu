@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display the IU Framework basic page layout.
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ *
+ * @ingroup themeable
+ */
+#}
+{% if content %}
+  {% if content.constrained %}
+  <div class="row">
+    <div {{ region_attributes.constrained.addClass('layout') }}>
+      {{ content.constrained }}
+    </div>
+  </div>
+  {% endif %}
+
+  {% if content.edge_to_edge %}
+    {{ content.edge_to_edge }}
+  {% endif %}
+{% endif %}
