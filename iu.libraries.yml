@@ -49,6 +49,11 @@ tabledrag:
   js:
     js/tabledrag.js: {}
 
+tabs:
+  css:
+    theme:
+      css/components/tabs.css: {}
+
 toolbar:
   css:
     theme:

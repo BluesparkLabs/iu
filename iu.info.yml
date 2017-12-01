@@ -31,6 +31,8 @@ libraries-extend:
     - iu/paragraphs.admin
   core/drupal.dropbutton:
     - iu/dropbutton
+  iu_paragraphs/iu-tabs:
+    - iu/tabs
 
 regions:
   # 1. Standard Drupal regions
