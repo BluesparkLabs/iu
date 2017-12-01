@@ -8,3 +8,9 @@
 .section.help {
   padding: 0 0 1.6em;
 }
+
+.bg-image.parallax {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
