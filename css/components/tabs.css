@@ -1,8 +1,18 @@
 /* Improve IU Framework tabs styles */
 .tabs-content {
   color: #45382b;
-  border: 1px solid rgba(172, 163, 154, .5); /* #aca39a */
+  border: 1px solid #edebeb;
 }
+.tabs-content ol,
+.tabs-content p,
+.tabs-content ul {
+  font-size: 1.15rem;
+  margin-bottom: 1.25rem;
+}
+.tabs-content :last-child {
+  margin-bottom: 0;
+}
+
 ul.tabs {
   background: none;
   border: 0;
@@ -16,32 +26,27 @@ ul.tabs {
   border: 1px solid #edebeb;
   background: #e9e9e9;
   color: #222;
-  border-bottom: 0;
   border-top-left-radius: .25rem;
   border-top-right-radius: .25rem;
   display: block;
-  line-height: 1;
-  font-family: BentonSansBold, Arial, sans-serif;
-  font-weight: 400;
-  font-size: .9rem;
-  padding: 1rem 1.5rem;
-  margin-top: .5rem;
-  transition: all .2s;
-}
-
-.tabs-title>a[aria-selected=true] {
-  border-bottom: 1px solid #fff;
   margin-bottom: -1px;
-  background: #fff;
+  line-height: 1.6;
+  font-size: 1.25rem;
+  padding: .5rem 1.2rem;
+  transition: all .2s;
 }
 
 .tabs-title>a:focus,
 .tabs-title>a:hover {
   background: #f4f4f4;
+  color: #01426a;
 }
 
-.tabs-title>a:focus,
 .tabs-title>a[aria-selected=true] {
-  padding: 1.25rem 1.5rem;
-  margin-top: 0;
+  border-bottom: 1px solid #fff;
+  background: #fff;
+}
+
+.tabs-panel {
+  padding: 1.5rem;
 }
