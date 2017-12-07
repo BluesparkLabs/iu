@@ -4,9 +4,7 @@
  * Override the system menu block to match IU Framework expectations.
  */
  #}
-<div{{ attributes }}>
+<nav{{ attributes }} role="navigation" aria-label=" {{ 'Section navigation'|t }}" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
   {{ title_prefix }}{{ title_suffix }}
-  <nav role="navigation" aria-label=" {{ 'Section navigation'|t }}" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-    {{ content }}
-  </nav>
-</div>
+  {{ content }}
+</nav>
