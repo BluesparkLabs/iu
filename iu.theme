@@ -1,21 +1,37 @@
 <?php
 
 /**
- * Prepares variables for `block.html.twig`.
+ * Implements hook_theme_suggestions_HOOK_alter() for blocks.
  */
-function iu_preprocess_block(&$variables){
+function iu_theme_suggestions_block_alter(array &$suggestions, array $variables){
+
+  // Add a template suggestion for menu blocks based on region name.
+  if (isset($variables['elements']['#id']) && $variables['elements']['#base_plugin_id'] == 'system_menu_block') {
+
+    $block_id = $variables['elements']['#id'];
+    $block = \Drupal\block\Entity\Block::load($block_id);
+
+    if ($block) {
+      $region = $block->getRegion();
+      $suggestions[] = $variables['theme_hook_original'] . '__' . $region;
+    }
+  }
+}
+
+/**
+ * Prepares variables for `block--system-menu-block.html.twig`.
+ */
+function iu_preprocess_block__system_menu_block(&$variables){
+
+  // Pass the region name via a custom data attribute for usage in
+  // hook_preprocess_menu.
   if (isset($variables['elements']['#id'])) {
     $block_id = $variables['elements']['#id'];
     $block = \Drupal\block\Entity\Block::load($block_id);
 
     if ($block) {
       $region = $block->getRegion();
-      $variables['elements']['#configuration']['region'] = $region;
-      $variables['configuration']['region'] = $region;
-
-      if ($region == 'secondary_menu') {
-        $variables['content']['#attributes']['class'][] = 'inline separators';
-      }
+      $variables['content']['#attributes']['data-region'] = $region;
     }
   }
 }
@@ -26,11 +42,20 @@ function iu_preprocess_block(&$variables){
 function iu_preprocess_menu(&$variables) {
   $menu_name = isset($variables['menu_name']) ? $variables['menu_name'] : '';
 
+  // If this menu is inside a menu_block, find the region the block belongs to
+  // then clean up after ourselves to remove the data attribute created in
+  // hook_preprocess_block.
+  $region = '';
+  if (!empty($variables['attributes']['data-region'])) {
+    $region  = $variables['attributes']['data-region'];
+    unset($variables['attributes']['data-region']);
+  }
+
   # Special case triggers to hide first/last menu items on desktop, and make
   # them icons on the mobile sticky menu.
   $has_search = FALSE;
   $has_home = FALSE;
-  if (strpos('main', $menu_name) !== FALSE) {
+  if ($region == 'primary_menu') {
     @$last = &end($variables['items']);
     if (!$last['url']->isRouted() && $last['url']->getUri() == '/search') {
       $last['attributes']->addClass('show-on-sticky search');
@@ -45,9 +70,6 @@ function iu_preprocess_menu(&$variables) {
       $first['attributes']->addClass('show-on-sticky home');
       $has_home = TRUE;
     }
-  }
-  elseif (strpos($menu_name, 'social') !== FALSE) {
-    $variables['attributes']['class'][] = 'social';
   }
 
   # Add first/last and two/two-left classes on all menu items.

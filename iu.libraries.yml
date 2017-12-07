@@ -2,6 +2,7 @@ global-styling:
   css:
     theme:
       css/theme.css: {}
+      css/components/is-active.css: {}
       css/components/alert.css: {}
       css/components/form.css: {}
       css/components/marker.css: {}

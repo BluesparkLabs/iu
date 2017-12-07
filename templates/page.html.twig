@@ -58,7 +58,8 @@
 
   {{ page.highlighted }}
 
-  <main role="main" class="{{ page.section_nav ?: 'no-section-nav' }}">
+  {% set nav_class = page.section_nav is not empty ? '' : 'no-section-nav'%}
+  <main role="main" class="{{ nav_class }}">
 
     {{ page.section_nav }}
 
