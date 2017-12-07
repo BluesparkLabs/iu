@@ -77,7 +77,7 @@
 
   </main>
 
-  {% if page.belt_nav or page.belt_social_media %}
+  {% if page.belt_nav|render|trim or page.belt_social_media|render|trim %}
   <div class="section bg-mahogany bg-dark dark belt"><div class="row pad">
 
     <div class="one-half belt-nav">
@@ -93,7 +93,7 @@
   </div></div>
   {% endif %}
 
-  {% if page.skirt_nav or page.skirt_connect %}
+  {% if page.skirt_nav|render|trim or page.skirt_connect|render|trim %}
   <div class="section bg-mahogany bg-dark dark skirt"><div class="row pad">
 
     {{ page.skirt_nav }}
