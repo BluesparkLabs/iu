@@ -45,6 +45,7 @@ regions:
   section_nav:        'Section Nav'               # 2
   breadcrumb:         'Breadcrumb'                # 1
   page_title:         'Page Title'                # 2
+  local_tasks:        'Local Tasks'               # 2
   content:            'Content (Constrained)'     # 1
   content_fullwidth:  'Content (Edge-to-edge)'    # 1
   footer:             'Footer'                    # 1

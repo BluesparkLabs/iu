@@ -5,8 +5,8 @@ dependencies:
     - iu
 id: iu_local_actions
 theme: iu
-region: content
-weight: -6
+region: local_tasks
+weight: -7
 provider: null
 plugin: local_actions_block
 settings:
