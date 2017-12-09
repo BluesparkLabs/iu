@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - iu_paragraphs
     - system
   theme:
     - iu
