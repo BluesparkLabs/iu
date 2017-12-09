@@ -8,8 +8,40 @@
   }
 }
 
-@media screen and (min-width: 64.0625em) {
-  .toolbar-fixed nav.main.is-sticky {
-    top: 2.4rem !important;
+.toolbar-loading #branding-bar,
+.toolbar-loading nav.main {
+  z-index: 1251;
+}
+
+@media only screen and (max-width: 976px) {
+  .toolbar-fixed:not(.toolbar-loading) #branding-bar {
+    top: 39px !important;
+  }
+  .toolbar-fixed.toolbar-horizontal.toolbar-tray-open:not(.toolbar-loading) #branding-bar {
+    top: 80px !important;
+  }
+}
+
+@media only screen and (min-width: 977px) and (max-width: 1024px) {
+  .toolbar-fixed #branding-bar {
+    top: 39px !important;
+  }
+  .toolbar-fixed.toolbar-horizontal.toolbar-tray-open #branding-bar {
+    top: 80px !important;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .toolbar-vertical:not(.toolbar-fixed) #branding-bar {
+    position: relative;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .toolbar-fixed:not(.toolbar-loading) nav.main.is-sticky {
+    top: 39px !important;
+  }
+  .toolbar-fixed.toolbar-horizontal.toolbar-tray-open:not(.toolbar-loading) nav.main.is-sticky {
+    top: 80px !important;
   }
 }
