@@ -58,7 +58,7 @@
 
   {{ page.highlighted }}
 
-  {% set nav_class = page.section_nav is not empty ? '' : 'no-section-nav'%}
+  {% set nav_class = page.section_nav|render|striptags|trim ? '' : 'no-section-nav'%}
   <main role="main" class="{{ nav_class }}">
 
     {{ page.section_nav }}
