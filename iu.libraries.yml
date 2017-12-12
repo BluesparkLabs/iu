@@ -16,6 +16,11 @@ contextual:
     theme:
       css/components/contextual.css: {}
 
+color-block:
+  css:
+    theme:
+      css/components/color-block.css: {}
+
 dropbutton:
   css:
     theme:

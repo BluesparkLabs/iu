@@ -1,0 +1,21 @@
+# A Secondary color option for the background color on page sections. The
+# default is mahogany (a shade of brown).
+#
+# Possible values include:
+# - crimson
+# - mahogany
+# - gray
+# - gold
+# - gold-dark
+# - mint
+# - mint-dark
+# - midnight
+# - midnight-dark
+# - magestic
+# - magestic-dark
+# - limestone
+# - limestone-dark
+# - black
+secondary_color: mahogany
+
+
