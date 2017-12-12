@@ -202,11 +202,11 @@ function _iu_secondary_color_palette_options() {
       'class' => 'bg-crimson bg-dark',
       'is_dark' => TRUE,
     ],
-    'mahogany' => [
-      'name'=>'Mahogany',
-      'hex' => '#4a3c31',
-      'class' => 'bg-mahogany bg-dark',
-      'is_dark' => TRUE,
+    'gray' => [
+      'name'=>'Light Gray',
+      'hex' => '#edebeb',
+      'class' => 'bg-gray',
+      'is_dark' => FALSE,
     ],
     'gold-dark' => [
       'name'=>'Dark Gold',
@@ -274,11 +274,11 @@ function _iu_secondary_color_palette_options() {
       'class' => 'bg-black bg-dark',
       'is_dark' => TRUE,
     ],
-    'gray' => [
-      'name'=>'Light Gray',
-      'hex' => '#edebeb',
-      'class' => 'bg-gray',
-      'is_dark' => FALSE,
+    'mahogany' => [
+      'name'=>'Mahogany',
+      'hex' => '#4a3c31',
+      'class' => 'bg-mahogany bg-dark',
+      'is_dark' => TRUE,
     ],
     'none' => [
       'name'=>'None',
