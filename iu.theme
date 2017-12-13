@@ -5,8 +5,8 @@
  */
 function iu_preprocess_html(&$variables) {
   $secondary_color = theme_get_setting('secondary_color', 'iu');
-
-  $variables['attributes']['class'][] = !empty($color_class_mappings[$secondary_color]) ? $color_class_mappings[$secondary_color] : 'none';
+  $color_class_mappings = _iu_secondary_color_palette_options();
+  $variables['attributes']['class'][] = !empty($color_class_mappings[$secondary_color]) ? $secondary_color : 'none';
 }
 
 /**
