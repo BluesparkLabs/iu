@@ -1,6 +1,7 @@
 @import 'https://fonts.iu.edu/style.css?family=BentonSans:regular,bold';
 
 .color-block {
+  font-family: BentonSans, Arial, sans-serif;
   color: #191919;
   padding: 1.5rem;
   font-size: 1rem;
