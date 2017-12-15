@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+
 /**
  * Implements hook_preprocess_html().
  */
@@ -141,8 +143,17 @@ function iu_preprocess_input(&$variables) {
     $classes[] = 'small invert no-margin';
   }
   elseif (!empty($classes) && in_array('button', $classes)) {
+    // Get attribute value from TranslatableMarkup when instance
+    // is provided or raw value when is string.
+    $attributes = $variables['attributes'];
+    if ($attributes['value'] instanceof TranslatableMarkup) {
+      $attribute_value = $attributes['value']->getUntranslatedString();
+    }
+    else {
+      $attribute_value = $attributes['value'];
+    }
 
-    if ($variables['attributes']['value']->getUntranslatedString() == 'Remove') {
+    if ($attribute_value == 'Remove') {
       $classes[] = 'button--remove small secondary hollow no-margin';
     }
   }
