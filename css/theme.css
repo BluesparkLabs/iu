@@ -5,6 +5,11 @@
   }
 }
 
+article {
+  /* clearfix for floated images */
+  overflow: hidden;
+}
+
 .section.help {
   padding: 0 0 1.6em;
 }
