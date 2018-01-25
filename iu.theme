@@ -48,6 +48,26 @@ function iu_preprocess_block__system_menu_block(&$variables){
 }
 
 /**
+ * Prepares variables for `breadcrumb.html.twig`.
+ */
+function iu_preprocess_breadcrumb(&$variables){
+
+  // Remove 'Home' from breadcrumb trail based on theme settings variable.
+  //
+  // Possible values:
+  // - 0: do not remove
+  // - 1: remove
+  // - 2: remove if its the only item
+  $hide_home_breadcrumb = theme_get_setting('hide_home_breadcrumb', 'iu');
+  if ($hide_home_breadcrumb == '1' && count($variables['breadcrumb'])) {
+    array_shift($variables['breadcrumb']);
+  }
+  elseif ($hide_home_breadcrumb == '2' && count($variables['breadcrumb']) == 1) {
+    array_shift($variables['breadcrumb']);
+  }
+}
+
+/**
  * Prepares variables for `menu.html.twig`.
  */
 function iu_preprocess_menu(&$variables) {

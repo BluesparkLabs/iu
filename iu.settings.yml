@@ -18,4 +18,5 @@
 # - black
 secondary_color: mahogany
 
-
+# Hide 'Home' in breadcrumb trail by default.
+hide_home_breadcrumb: 1
