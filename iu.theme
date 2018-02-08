@@ -188,6 +188,10 @@ function iu_preprocess_input(&$variables) {
       $classes[] = 'button--remove small secondary hollow no-margin';
     }
   }
+
+  if(!empty($classes) && in_array('error', $classes)) {
+    $classes[] = 'is-invalid-input';
+  }
 }
 
 /**
