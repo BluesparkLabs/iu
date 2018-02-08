@@ -171,7 +171,7 @@ function iu_preprocess_input(&$variables) {
   $classes = &$variables['attributes']['class'];
 
   if (!empty($classes) && in_array('field-add-more-submit', $classes)) {
-    $classes[] = 'small invert no-margin';
+    $classes[] = 'small invert';
   }
   elseif (!empty($classes) && in_array('button', $classes)) {
     // Get attribute value from TranslatableMarkup when instance
@@ -190,7 +190,15 @@ function iu_preprocess_input(&$variables) {
   }
 }
 
-
+/**
+ * Prepares variables for `input--submit.html.twig`.
+ */
+function iu_preprocess_input__submit(&$variables) {
+  $classes = &$variables['attributes']['class'];
+  if (in_array('paragraph-type-add-modal-button', $classes)) {
+    $classes[] = 'small invert no-margin';
+  }
+}
 /**
  * Prepares variables for `input--submit--paragraph-action.html.twig`.
  */
@@ -204,7 +212,7 @@ function iu_preprocess_input__submit__paragraph_action(&$variables) {
     $classes[] = 'tiny secondary hollow no-margin';
   }
   elseif (in_array('field-add-more-submit', $classes)) {
-    $classes[] = 'small invert no-margin';
+    $classes[] = 'small invert';
   }
 }
 

@@ -72,6 +72,10 @@ legend {
   margin-left: .4rem;
 }
 
+.js-text-format-wrapper .filter-wrapper {
+  margin: -1rem 0 1rem;
+}
+
 button.link {
   color: #006298;
   background: transparent;
