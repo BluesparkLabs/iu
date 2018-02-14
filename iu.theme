@@ -141,7 +141,7 @@ function iu_preprocess_node(&$variables) {
   $blockRepository = \Drupal::service('block.repository');
   /** @var $blocks \Drupal\block\BlockInterface[] */
   $blocks = $blockRepository->getVisibleBlocksPerRegion($cacheable_metadata_list);
-  $variables['has_page_title'] = (isset($blocks['page_title']) && !empty($blocks['page_title']['iu_page_title']));
+  $variables['has_page_title'] = (isset($blocks['page_title']) && !empty($blocks['page_title']));
 }
 
 /**

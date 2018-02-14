@@ -22,7 +22,7 @@ function iu_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormState
       '1' => 'Remove <em>Home</em> from breadcrumb trail',
       '2' => 'Remove <em>Home</em> when it is the only breadcrumb in trail',
     ],
-    '#default_value' => theme_get_setting('hide_home_breadcrumb', 'iu'),
+    '#default_value' => theme_get_setting('hide_home_breadcrumb'),
   );
 
   $colors = _iu_secondary_color_palette_options();
@@ -42,7 +42,7 @@ function iu_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormState
     '#title' => t('Secondary background color (for sections)'),
     '#options' => $options,
     '#attributes' => ['class' => ['color-block-radios']],
-    '#default_value' => theme_get_setting('secondary_color', 'iu'),
+    '#default_value' => theme_get_setting('secondary_color'),
     '#description'   => t("In addition to the two primary background colors (crimson and light gray) available for use in your site sections, you may also select one additional secondary background color from the expanded IU Color Palette. Note: Crimson is Indiana University's main brand color and should always be used in greater frequency than any secondary color."),
     '#attached' => ['library' => ['iu/color-block']],
   ];
