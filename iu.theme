@@ -30,9 +30,9 @@ function iu_theme_suggestions_block_alter(array &$suggestions, array $variables)
 }
 
 /**
- * Prepares variables for `block--system-menu-block.html.twig`.
+ * Prepares variables for `block.html.twig`.
  */
-function iu_preprocess_block__system_menu_block(&$variables){
+function iu_preprocess_block(&$variables){
 
   // Pass the region name via a custom data attribute for usage in
   // hook_preprocess_menu.
@@ -88,10 +88,11 @@ function iu_preprocess_menu(&$variables) {
   $has_home = FALSE;
   if ($region == 'primary_menu') {
     @$last = &end($variables['items']);
-    if (!$last['url']->isRouted() && $last['url']->getUri() == '/search') {
+    if ((!$last['url']->isRouted() && $last['url']->getUri() == '/search')
+      || ($last['url']->isRouted() && $last['url']->getRouteName() == 'search.view')) {
       $last['attributes']->addClass('show-on-sticky search');
       $attrs = $last['url']->getOption('attributes');
-      $attrs['class'][] = 'search-toggle';
+      $attrs['class'] = ['search-toggle'];
       $last['url']->setOption('attributes', $attrs);
       $has_search = TRUE;
     }
