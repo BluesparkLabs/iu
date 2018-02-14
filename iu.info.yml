@@ -47,7 +47,7 @@ regions:
   page_title:         'Page Title'                # 2
   local_tasks:        'Local Tasks'               # 2
   content:            'Content (Constrained)'     # 1
-  content_fullwidth:  'Content (Edge-to-edge)'    # 1
+  content_fullwidth:  'Content (Edge-to-edge)'    # 2
   footer:             'Footer'                    # 1
   belt_tools:         'Footer Tools'              # 2
   belt_nav:           'Footer Belt: Inline Nav'   # 2
