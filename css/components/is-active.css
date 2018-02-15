@@ -4,16 +4,20 @@
  * This ended up being easier than trying to get Drupal to change the active
  * link class.
  */
+nav.main li.current-trail > a:after,
 nav.main a.is-active:after {
   width: 100%;
   background: #900;
+  display: block;
 }
 
+nav.main.is-sticky li.current-trail > a:after,
 nav.main.is-sticky a.is-active:after {
   background: #aca39a;
+  display: block;
 }
 
-.section-nav a.is-active:before{
+.section-nav a.is-active:before {
   content: '';
   position: absolute;
   top: 0;
@@ -23,8 +27,17 @@ nav.main.is-sticky a.is-active:after {
   background: #900;
 }
 
-nav.main.dropdown a:not(.is-active):after,
-nav.main.dropdown a:not(.is-active):hover:after {
+nav.main.dropdown li.current-trail > a:after,
+nav.main.dropdown li.current-trail > a:hover:after,
+nav.main.dropdown a.is-active:after,
+nav.main.dropdown a.is-active:hover:after {
+  display: block;
+}
+
+nav.main.dropdown li li.current-trail > a:after,
+nav.main.dropdown li li.current-trail > a:hover:after,
+nav.main.dropdown li li a.is-active:after,
+nav.main.dropdown li li a.is-active:hover:after {
   display: none;
 }
 
