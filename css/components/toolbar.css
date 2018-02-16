@@ -70,6 +70,10 @@
   .toolbar-vertical:not(.toolbar-fixed) .off-canvas {
     top: 88px;
   }
+  .toolbar-vertical:not(.toolbar-fixed) .off-canvas-content {
+    padding-top: 10px;
+    margin-top: -58px;
+  }
 }
 
 @media only screen and (min-width: 1025px) {
