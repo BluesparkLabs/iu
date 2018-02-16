@@ -31,6 +31,11 @@ function iu_theme_suggestions_block_alter(array &$suggestions, array $variables)
     $base_plugin_id = $variables['elements']['#base_plugin_id'];
     $block = \Drupal\block\Entity\Block::load($block_id);
 
+    // Use the same templates for both system menu blocks and menu_block
+    if ($base_plugin_id == 'system_menu_block') {
+      $base_plugin_id = 'menu_block';
+    }
+
     if ($block) {
       $region = $block->getRegion();
       $suggestions[] = $variables['theme_hook_original'] . '__' . $region;
