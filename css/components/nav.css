@@ -1,0 +1,8 @@
+/* Replace table layout with flexbox in order to vertically center menu items */
+nav.main ul {
+  display: flex;
+  align-items: center;
+}
+nav.main li {
+  flex: 1 1 auto;
+}
