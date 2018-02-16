@@ -1,8 +1,8 @@
 /* Replace table layout with flexbox in order to vertically center menu items */
-nav.main ul {
+nav.main:not(.is-sticky) ul {
   display: flex;
   align-items: center;
 }
-nav.main li {
+nav.main:not(.is-sticky) li {
   flex: 1 1 auto;
 }
