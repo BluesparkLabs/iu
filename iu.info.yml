@@ -38,6 +38,7 @@ regions:
   # 1. Standard Drupal regions
   # 2. Custom regions for IU Framework
   header:             'Header'                    # 1
+  off_canvas:         'Mobile menu (off canvas)'  # 2
   primary_menu:       'Main menu'                 # 1
   secondary_menu:     'Secondary menu'            # 1
   highlighted:        'Highlighted'               # 1

@@ -39,7 +39,8 @@
     {% for item in items %}
       {%
         set classes = [
-          item.in_active_trail ? 'current-trail current-parent'
+          item.in_active_trail ? 'current-trail current-parent',
+          item.below ? 'has-children'
         ]
       %}
       <li{{ item.attributes.addClass(classes) }}>

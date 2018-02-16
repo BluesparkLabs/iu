@@ -2,6 +2,7 @@ global-styling:
   css:
     theme:
       css/theme.css: {}
+      css/components/off-canvas.css: {}
       css/components/is-active.css: {}
       css/components/alert.css: {}
       css/components/form.css: {}
@@ -91,6 +92,7 @@ iu-framework:
       //assets.iu.edu/web/fonts/icon-font.css: {type: external, minified: true }
     theme:
       //assets.iu.edu/brand/3.x/brand.css: { type: external, minified: true }
+      //assets.iu.edu/search/3.x/search.css: { type: external, minified: true }
   js:
     //assets.iu.edu/web/3.x/js/iu-framework.min.js: { type: external, minified: true }
   dependencies:

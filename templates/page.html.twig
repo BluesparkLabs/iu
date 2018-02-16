@@ -44,10 +44,17 @@
  */
 #}
 
+{% include '@iu/parts/header-iub.html.twig' %}
+
+<div id="toggles">
+  <div class="row pad">
+    {% if page.off_canvas|render|trim %}
+    <button class="button hide-for-large" data-toggle="offCanvas" aria-expanded="false" aria-controls="offCanvas">Menu</button>
+    {% endif %}
+  </div>
+</div>
+
 <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
-
-  {% include '@iu/parts/header-iub.html.twig' %}
-
 <div class="off-canvas-content" data-off-canvas-content>
 
   {{ page.header }}
@@ -107,10 +114,8 @@
 
   {% include '@iu/parts/footer.html.twig' %}
 
-</div>{# /.off-canvas-content #}
+</div>{# /.off-canvas-content #}</div>{# /.off-canvas-wrapper-inner #}
 
-<div class="right-off-canvas-menu show-for-medium-down">
-  <!-- @todo: offcanvas: add mobile menu -->
+<div id="offCanvas" class="off-canvas position-{{ off_canvas_position }}" data-off-canvas="" data-position="{{ off_canvas_position }}">
+  {{ page.off_canvas }}
 </div>
-
-</div>{# /.off-canvas-wrapper-inner #}
