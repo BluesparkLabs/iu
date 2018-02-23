@@ -12,14 +12,26 @@
 #}
 {% if content %}
   {% if content.constrained %}
-  <div class="row">
-    <div {{ region_attributes.constrained.addClass('layout') }}>
-      {{ content.constrained }}
+  <div class="section">
+    <div class="row">
+      <div {{ region_attributes.constrained.addClass('layout') }}>
+        {{ content.constrained }}
+      </div>
     </div>
   </div>
   {% endif %}
 
   {% if content.edge_to_edge %}
     {{ content.edge_to_edge }}
+  {% endif %}
+
+  {% if content.constrained_below %}
+  <div class="section">
+    <div class="row">
+      <div {{ region_attributes.constrained_below.addClass('layout') }}>
+        {{ content.constrained_below }}
+      </div>
+    </div>
+  </div>
   {% endif %}
 {% endif %}

@@ -9,3 +9,5 @@ iu_page_layout:
       label: Constrained
     edge_to_edge:
       label: Edge-to-edge
+    constrained_below:
+      label: Constrained (below)
