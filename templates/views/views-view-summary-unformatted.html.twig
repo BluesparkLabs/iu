@@ -22,7 +22,8 @@
  */
 #}
 {% if options.inline %}
-<div class="filter link"><ul>
+{{ attach_library('iu/filter-alpha-link') }}
+<div class="filter alpha link"><ul>
 {% endif %}
 
 {% for row in rows  %}

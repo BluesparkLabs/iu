@@ -29,6 +29,11 @@ dropbutton:
     theme:
       css/components/dropbutton.css: {}
 
+filter-alpha-link:
+  css:
+    theme:
+      css/components/filter-alpha-link.css: {}
+
 local-tasks:
   css:
     theme:
