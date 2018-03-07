@@ -22,7 +22,7 @@
  * @ingroup themeable
  */
 #}
-<div class="filter alpha">
+<div class="filter link">
 <ul>
   {% for row in rows %}
     <li><a href="{{ row.url }}"{{ row.attributes.addClass(row.active ? 'is-active')|without('href') }}>{{ row.link }}</a>
