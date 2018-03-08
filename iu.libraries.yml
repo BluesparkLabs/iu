@@ -34,6 +34,11 @@ filter-alpha-link:
     theme:
       css/components/filter-alpha-link.css: {}
 
+feed-items:
+  css:
+    theme:
+      css/components/feed-items.css: {}
+
 local-tasks:
   css:
     theme:

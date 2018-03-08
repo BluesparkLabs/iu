@@ -1,0 +1,33 @@
+/**
+ * Leverage IU Framework 'feed-item' styling for views that use the
+ * "HTML List" display format.
+ */
+
+ol.feed-items {
+  margin-left: 1.25rem;
+}
+
+ul.feed-items {
+  list-style: none;
+  margin-left: 0;
+}
+
+li.feed-item {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+li.feed-item::before,
+li.feed-item::after {
+  display: none; /* override iu framework */
+}
+
+li.feed-item > article {
+  overflow: visible; /* override iu framework */
+}
+
+li.feed-item > article::after {
+  content: ' ';
+  display: table;
+  width: 100%;
+}

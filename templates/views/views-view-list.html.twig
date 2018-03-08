@@ -3,6 +3,8 @@
  * @file
  * Theme override for a view template to display a list of rows.
  *
+ * Leverage the "Feed items" IU Framework display style by default.
+ *
  * Available variables:
  * - attributes: HTML attributes for the container.
  * - rows: A list of rows for this list.
@@ -16,6 +18,7 @@
  * @see template_preprocess_views_view_list()
  */
 #}
+{{ attach_library('iu/feed-items') }}
 {% if attributes -%}
   <div{{ attributes }}>
 {% endif %}
@@ -23,16 +26,19 @@
     <h3>{{ title }}</h3>
   {% endif %}
 
+
+  {% set list_attributes = (list.attributes) ?: create_attribute() %}
+  {% set list_attributes = list_attributes.addClass('feed-items') %}
   {% if list.type == 'ol' %}
     {# Start the numbering of the ordered list from the correct result. #}
     {% set start = view.pager.current_page * view.pager.options.items_per_page + 1 %}
-    <{{ list.type }}{{ list.attributes }} start="{{ start }}">
-  {% else %}
-    <{{ list.type }}{{ list.attributes }}>
+    {% set list_attributes = list_attributes.addAttribute('start', start) %}
   {% endif %}
-
+  <{{ list.type }}{{ list_attributes }}>
     {% for row in rows %}
-      <li{{ row.attributes }}>{{ row.content }}</li>
+      {% set row_attributes = (row.attributes) ?: create_attribute() %}
+      {% set row_attributes = row_attributes.addClass('feed-item') %}
+      <li{{ row_attributes }}>{{ row.content }}</li>
     {% endfor %}
 
   </{{ list.type }}>
