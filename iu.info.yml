@@ -33,6 +33,8 @@ libraries-extend:
     - iu/dropbutton
   iu_paragraphs/iu-tabs:
     - iu/tabs
+  diff/diff.general:
+    - iu/diff
 
 regions:
   # 1. Standard Drupal regions

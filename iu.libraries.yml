@@ -24,6 +24,11 @@ color-block:
     theme:
       css/components/color-block.css: {}
 
+diff:
+  css:
+    theme:
+      css/components/diff.css: {}
+
 dropbutton:
   css:
     theme:
