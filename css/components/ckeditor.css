@@ -1,0 +1,44 @@
+@import '//assets.iu.edu/web/3.x/css/iu-framework.min.css';
+@import '//assets.iu.edu/web/fonts/icon-font.css';
+
+html {
+  /* Fonts are too big for ckeditor */
+  font-size: .8rem;
+}
+
+/* Enable the 'Styles' widget in CKEditor and add the following to the configuration:
+
+a.button|Button
+a.button.large|Large Button
+a.button.small|Small Button
+a.button.tiny|Tiny Button
+a.button.expanded|Expanded Button
+a.button.primary|Primary Button
+a.button.secondary|Secondary Button
+a.button.success|Success Button
+a.button.warning|Warning Button
+a.button.alert|Alert Button
+a.button.hollow|Hollow Button
+a.button.hollow.primary|Hollow Primary Button
+a.button.hollow.secondary|Hollow Secondary Button
+a.button.hollow.success|Hollow Success Button
+a.button.hollow.warning|Hollow Warning Button
+a.button.hollow.alert|Hollow Alert Button
+
+div.help-text|Help text block
+
+img.float-left|Float left
+img.float-right|Float right
+img.float-center|Float center
+
+div.alert.default|Default Alert
+div.alert.success|Success Alert
+div.alert.info|Info Alert
+div.alert.message|Message Alert
+div.alert.error|Error Alert
+
+div.meta|Meta text block
+dl.meta|Meta definition list
+dl.inline|Inline definition list
+
+*/

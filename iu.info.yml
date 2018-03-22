@@ -36,6 +36,10 @@ libraries-extend:
   diff/diff.general:
     - iu/diff
 
+ckeditor_stylesheets:
+  - css/components/ckeditor.css?1
+  - css/components/image-styles.css?1
+
 regions:
   # 1. Standard Drupal regions
   # 2. Custom regions for IU Framework

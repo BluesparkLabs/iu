@@ -44,6 +44,11 @@ feed-items:
     theme:
       css/components/feed-items.css: {}
 
+image-styles:
+  css:
+    theme:
+      css/components/image-styles.css: {}
+
 local-tasks:
   css:
     theme:
