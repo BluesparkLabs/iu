@@ -6,6 +6,28 @@ html {
   font-size: .8rem;
 }
 
+/*
+ * Copy .text styles from iu-framework because CKEditor does not have the
+ * .text class wrapper.
+ */
+.button {
+  margin-bottom: 1.25rem;
+}
+
+p > .button {
+  margin-bottom: 0;
+}
+
+a:not(.button) {
+  background: #f7f6f5;
+  background: rgba(0, 0, 0, .075);
+  transition: all .18s;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
 /* Enable the 'Styles' widget in CKEditor and add the following to the configuration:
 
 a.button|Button
