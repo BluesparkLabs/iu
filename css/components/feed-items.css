@@ -31,3 +31,9 @@ li.feed-item > article::after {
   display: table;
   width: 100%;
 }
+
+.feed-item .media .media {
+  margin: 0;
+  width: 100%;
+  padding: 0;
+}
