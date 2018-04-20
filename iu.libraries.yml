@@ -7,6 +7,7 @@ global-styling:
       css/components/nav.css: {}
       css/components/nav-buttons.css: {}
       css/components/alert.css: {}
+      css/components/field.css: {}
       css/components/form.css: {}
       css/components/marker.css: {}
   js:
