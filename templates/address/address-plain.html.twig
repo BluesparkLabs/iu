@@ -46,19 +46,19 @@
     <span itemprop="streetAddress">{{ address_line1 }}</span>
   {% endif %}
   {% if address_line2 %}
-    <span itemprop="streetAddress2">{{ address_line2 }}</span>,
+    <span itemprop="streetAddress2">{{ address_line2 }}</span>
   {% endif %}
-  {% if dependent_locality.code %}
-    <span itemprop="addressLocality">{{ dependent_locality.code }}</span>
+  {% if locality %}
+    <span itemprop="addressLocality">{{ locality }}</span>
   {% endif %}
-  {% if locality.code %}
-    <span itemprop="addressLocalityCode">{{ locality.code }}</span>
+  {% if administrative_area.code %}
+    <span itemprop="addressRegion">{{ administrative_area.code }}</span>
   {% endif %}
   {% if postal_code %}
     <span itemprop="postalCode">{{ postal_code }}</span>
   {% endif %}
-  {% if administrative_area.code %}
-    <span itemprop="administrativeAreaCode">{{ administrative_area.code }}</span>
+  {% if country.code and country.code != 'US' %}
+    <span itemprop="addressCountry">{{ country.code }}</span>
   {% endif %}
   </span>
 {% endif %}
