@@ -15,6 +15,11 @@ global-styling:
   dependencies:
     - iu/iu-framework
 
+address:
+  css:
+    theme:
+      css/components/address.css: {}
+
 contextual:
   css:
     theme:
