@@ -23,6 +23,7 @@ legend {
 .form-checkboxes .form-item,
 .form-radios .form-item {
   margin: .5rem 0;
+  zoom: 1.3;
 }
 
 .form-checkboxes [type=checkbox],
@@ -33,6 +34,7 @@ legend {
 .form-checkboxes input[type=checkbox]+label,
 .form-radios input[type=radio]+label {
   padding: 0;
+  font-size: 1rem;
 }
 
 .filter-guidelines {
