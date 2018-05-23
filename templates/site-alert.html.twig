@@ -13,11 +13,11 @@
   ]
 %}
 {%
-  set label = [
+  set label = {
     'high': 'urgent message',
     'medium': 'important note',
     'low': 'informative note',
-  ]
+  }
 %}
 <div role="alert" aria-label="{{ label[alert.severity] }}" class="{{ classes|join(' ')|trim }}">
   <div class="row pad contents">
