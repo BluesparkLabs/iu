@@ -36,6 +36,13 @@ libraries-extend:
   diff/diff.general:
     - iu/diff
 
+libraries-override:
+  # Override site_alert styles for IU Notices / Campus Alert compatibility.
+  site_alert/drupal.site_alert:
+    css:
+      theme:
+        css/site_alert.css: css/components/site-alert.css
+
 ckeditor_stylesheets:
   - css/components/ckeditor.css?1
   - css/components/image-styles.css?1
@@ -43,6 +50,7 @@ ckeditor_stylesheets:
 regions:
   # 1. Standard Drupal regions
   # 2. Custom regions for IU Framework
+  campus_alert:       'Campus alert'              # 2
   header:             'Header'                    # 1
   off_canvas:         'Mobile menu (off canvas)'  # 2
   primary_menu:       'Main menu'                 # 1
