@@ -2,6 +2,19 @@
   border-radius: 0;
 }
 
+.toolbar .toolbar-bar {
+  overflow: hidden; /* Fix to ensure black background shows up while loading */
+}
+
+/* Let tray scroll until explicitly oriented to match behavior of toolbar. */
+.toolbar-fixed .toolbar-tray {
+  position: absolute;
+}
+
+.toolbar-fixed .toolbar-oriented .toolbar-tray {
+  position: fixed;
+}
+
 @media screen and (min-width: 40em) {
   .toolbar-menu {
     font-size: 1em;
@@ -31,7 +44,7 @@
 
   .toolbar-fixed.toolbar-horizontal.toolbar-tray-open:not(.toolbar-loading) #toggles,
   .toolbar-fixed.toolbar-horizontal.toolbar-tray-open:not(.toolbar-loading) #branding-bar {
-    top: 80px !important;
+    top: 79px !important;
   }
 
   .toolbar-fixed.toolbar-horizontal.toolbar-tray-open:not(.toolbar-loading) .off-canvas {
@@ -51,7 +64,7 @@
 
   .toolbar-fixed.toolbar-horizontal.toolbar-tray-open #toggles,
   .toolbar-fixed.toolbar-horizontal.toolbar-tray-open #branding-bar {
-    top: 80px !important;
+    top: 79px !important;
   }
 
   .toolbar-fixed.toolbar-horizontal.toolbar-tray-open .off-canvas {
@@ -60,19 +73,15 @@
 }
 
 @media only screen and (max-width: 1024px) {
+  .toolbar-loading #toggles,
+  .toolbar-loading #branding-bar,
   .toolbar-vertical:not(.toolbar-fixed) #toggles,
   .toolbar-vertical:not(.toolbar-fixed) #branding-bar {
-    position: relative;
-  }
-  .toolbar-vertical:not(.toolbar-fixed) #toggles {
-    top: -50px;
+    position: absolute;
+    top: 39px;
   }
   .toolbar-vertical:not(.toolbar-fixed) .off-canvas {
     top: 88px;
-  }
-  .toolbar-vertical:not(.toolbar-fixed) .off-canvas-content {
-    padding-top: 10px;
-    margin-top: -58px;
   }
 }
 
@@ -81,6 +90,6 @@
     top: 39px !important;
   }
   .toolbar-fixed.toolbar-horizontal.toolbar-tray-open:not(.toolbar-loading) nav.main.is-sticky {
-    top: 80px !important;
+    top: 79px !important;
   }
 }
