@@ -11,7 +11,7 @@
  */
 #}
 {% if content %}
-  {% if content.constrained %}
+  {% if content.constrained|render|striptags|trim %}
   <div class="section">
     <div class="row">
       <div {{ region_attributes.constrained.addClass('layout') }}>
@@ -21,11 +21,11 @@
   </div>
   {% endif %}
 
-  {% if content.edge_to_edge %}
+  {% if content.edge_to_edge|render|striptags|trim %}
     {{ content.edge_to_edge }}
   {% endif %}
 
-  {% if content.constrained_below %}
+  {% if content.constrained_below|render|striptags|trim %}
   <div class="section">
     <div class="row">
       <div {{ region_attributes.constrained_below.addClass('layout') }}>
