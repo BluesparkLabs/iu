@@ -45,12 +45,12 @@
   {% if multiple %}
     <div{{ attributes.addClass(classes) }}>
       {% for item in items %}
-        <p{{ item.attributes }}>{{ item.content }}</p>
+        <div{{ item.attributes }}>{{ item.content }}</div>
       {% endfor %}
     </div>
   {% else %}
     {% for item in items %}
-      <p{{ attributes.addClass(classes) }}>{{ item.content }}</p>
+      <div{{ attributes.addClass(classes) }}>{{ item.content }}</div>
     {% endfor %}
   {% endif %}
 {% else %}
@@ -60,7 +60,7 @@
       <div class="field-multiple">
     {% endif %}
     {% for item in items %}
-      <p{{ item.attributes }}>{{ item.content }}</p>
+      <div{{ item.attributes }}>{{ item.content }}</div>
     {% endfor %}
     {% if multiple %}
       </div>
