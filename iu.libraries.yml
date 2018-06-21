@@ -4,6 +4,7 @@ global-styling:
       css/theme.css: {}
       css/components/off-canvas.css: {}
       css/components/is-active.css: {}
+      css/components/skip-link.css: {}
       css/components/nav.css: {}
       css/components/nav-buttons.css: {}
       css/components/alert.css: {}

@@ -1,0 +1,15 @@
+.skip-link,
+.skip-link:hover,
+.skip-link:focus {
+  width: 100%;
+  padding: .4rem 0 .625rem 0;
+  margin: 0;
+  text-align: center;
+  background-color: #575757;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+.skip-link:focus {
+  display: block;
+}
