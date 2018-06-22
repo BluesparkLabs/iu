@@ -97,8 +97,11 @@ function iu_preprocess_menu(&$variables) {
     unset($variables['attributes']['data-region']);
   }
 
-  # Special case triggers to hide first/last menu items on desktop, and make
-  # them icons on the mobile sticky menu.
+  // Expose the region variable to the template.
+  $variables['region'] = $region;
+
+  // Special case triggers to hide first/last menu items on desktop, and make
+  // them icons on the mobile sticky menu.
   $has_search = FALSE;
   $has_home = FALSE;
   if ($region == 'primary_menu') {
@@ -119,12 +122,12 @@ function iu_preprocess_menu(&$variables) {
     }
   }
 
-  # Add first/last and two/two-left classes on all menu items.
+  // Add first/last and two/two-left classes on all menu items.
   $i = 1;
   $count = count($variables['items']);
   foreach ($variables['items'] as &$item) {
-    # The order of these if/elseifs are relevent, and prevent "last two" or
-    # "first two-left" appearing on the same element.
+    // The order of these if/elseifs are relevent, and prevent "last two" or
+    // "first two-left" appearing on the same element.
     if (($i == $count && !$has_search) || ($i == ($count-1) && $has_search)) {
       $item['attributes']->addClass('last');
     }
