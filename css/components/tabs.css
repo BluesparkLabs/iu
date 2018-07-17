@@ -12,6 +12,9 @@
 .tabs-content :last-child {
   margin-bottom: 0;
 }
+.tabs-content .form-item :last-child {
+  margin-bottom: 1rem;
+}
 
 ul.tabs {
   background: none;
