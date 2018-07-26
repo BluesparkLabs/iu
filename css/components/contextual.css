@@ -46,6 +46,11 @@
   background: #2199e8;
 }
 
+.contextual-region.feature .contextual {
+  top: auto;
+  bottom: 6px;
+}
+
 nav.main.is-sticky {
   z-index: 600 !important;
 }
