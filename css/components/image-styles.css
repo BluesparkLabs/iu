@@ -19,6 +19,11 @@
   margin-bottom: 1rem;
 }
 
+/* IU Framework sets bottom margin on figure.media container. */
+figure.media img {
+  margin-bottom: 0; /* Removes the bottom margine set on image styles above. */
+}
+
 @media screen and (min-width: 40em) {
   .align-right .image-style-thumbnail,
   .align-right .image-style-iu-one-third,
@@ -72,7 +77,6 @@
     max-width: 564px;
   }
 
-
   .breakout .image-style-iu-one-third,
   .breakout .image-style-iu-one-third-square,
   .breakout .image-style-iu-one-third-standard,
@@ -93,4 +97,8 @@
     max-width: 761px;
   }
 
+  /* Images inside grid items should scale to their container. */
+  .grid-item .feature img {
+    max-width: 100%; /* Override the max-width set on image styles above. */
+  }
 }
