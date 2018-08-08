@@ -37,6 +37,7 @@ ul.tabs {
   font-size: 1.25rem;
   padding: .5rem 1.2rem;
   transition: all .2s;
+  text-decoration: none;
 }
 
 .tabs-title>a:focus,

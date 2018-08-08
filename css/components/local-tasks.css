@@ -20,6 +20,7 @@
   color: #2199e8;
   transition: all .2s ease-out;
   display: block;
+  text-decoration: none;
 }
 
 .local-tasks li>a:hover,
