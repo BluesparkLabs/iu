@@ -39,6 +39,27 @@
             return displace;
         };
 
+        // Override default smoothScroll helper to integrate with Drupal Toolbar.
+        IU.addHelper('smoothScroll', function() {
+            var scope = this;
+
+            $('a[href*="#"]:not([href="#"], [href^="#panel"])').not('#skipnav a').click(function() {
+                if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+
+                    if (target.length) {
+                        $('html, body').animate({
+                            scrollTop: target.offset().top - IU.uiDisplace()
+                        }, 1000);
+
+                        return false;
+                    }
+                }
+            });
+        });
+
+
         // Override default skipNav helper to integrate with Drupal Toolbar.
         IU.addHelper('skipNav', function() {
             var scope = this;
