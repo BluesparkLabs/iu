@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\block\Entity\Block;
+use Drupal\Component\Utility\Html;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 
 /**
@@ -29,7 +31,7 @@ function iu_theme_suggestions_block_alter(array &$suggestions, array $variables)
 
     $block_id = $variables['elements']['#id'];
     $base_plugin_id = $variables['elements']['#base_plugin_id'];
-    $block = \Drupal\block\Entity\Block::load($block_id);
+    $block = Block::load($block_id);
 
     // Use the same templates for both system menu blocks and menu_block
     if ($base_plugin_id == 'system_menu_block') {
@@ -53,11 +55,35 @@ function iu_preprocess_block(&$variables){
   // hook_preprocess_menu.
   if (isset($variables['elements']['#id'])) {
     $block_id = $variables['elements']['#id'];
-    $block = \Drupal\block\Entity\Block::load($block_id);
+    $block = Block::load($block_id);
 
     if ($block) {
       $region = $block->getRegion();
       $variables['content']['#attributes']['data-region'] = $region;
+
+      $block_class = '';
+      // Create an HTML class based on the menu ID.
+      if (!empty($variables['elements']['#base_plugin_id']) &&
+        !empty($variables['elements']['#derivative_plugin_id']) &&
+        in_array($variables['elements']['#base_plugin_id'], ['menu_block', 'system_menu_block'])) {
+
+        $menu_id = $variables['elements']['#derivative_plugin_id'];
+
+        // Add 'menu' to the id for clarity in CSS.
+        if (strpos($menu_id, 'menu') === FALSE) {
+          $menu_id = 'menu-' . $menu_id;
+        }
+
+        $block_class = Html::cleanCssIdentifier($menu_id);
+      }
+      // Otherwise, create an HTML class based on the block ID.
+      else {
+        $block_class = Html::cleanCssIdentifier($block_id);
+      }
+
+      if ($block_class) {
+        $variables['attributes']['class'][] = 'block-' . $block_class;
+      }
     }
   }
 }
