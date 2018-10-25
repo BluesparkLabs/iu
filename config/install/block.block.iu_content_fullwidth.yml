@@ -18,9 +18,9 @@ settings:
   provider: system
   label_display: '0'
 visibility:
-  is_node:
-    id: is_node
-    is_node: 1
+  entity_type:
+    id: entity_type
+    types:
+      node: node
     negate: false
-    context_mapping:
-      node: '@node.node_route_context:node'
+    context_mapping: {  }
