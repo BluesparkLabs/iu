@@ -32,6 +32,31 @@ function iu_form_system_theme_settings_alter(&$form, FormStateInterface &$form_s
     '#default_value' => theme_get_setting('hide_home_breadcrumb'),
   );
 
+  $form['branding_bar'] = [
+    '#type' => 'details',
+    '#title' => t('Branding bar'),
+    '#open' => TRUE,
+    '#description' => '<p>' . t('Specify which campus should be linked in the header.') . '</p>',
+  ];
+
+  $form['branding_bar']['campus'] = array(
+    '#type' => 'radios',
+    '#options' => [
+      'iu'    => 'Indiana University (iu.edu)',
+      'iub'   => 'IU Bloomington (indiana.edu)',
+      'iue'   => 'IU East (iue.edu)',
+      'iuk'   => 'IU Kokomo (iuk.edu)',
+      'iun'   => 'IU Northwest (iun.edu)',
+      'iupui' => 'IUPUI (iupui.edu)',
+      'ius'   => 'IU Southeast (ius.edu)',
+      'iusb'  => 'IU South Bend (iusb.edu)',
+      'iufw'  => 'IU Fort Wayne (iufw.edu)',
+      'iupuc' => 'IUPUC (iupuc.edu)',
+    ],
+    '#description' => 'The header branding bar features the Block IU in a red bar and goes at the top of every page of your website. Each campus has its own branding bar, but only the name and link change.',
+    '#default_value' => theme_get_setting('campus'),
+  );
+
   $form['off_canvas'] = [
     '#type' => 'details',
     '#title' => t('Mobile menu position'),
@@ -87,6 +112,10 @@ function iu_form_system_theme_settings_validate($form, FormStateInterface $form_
   // Set a flag to indicate whether caches need to be cleared.
   $flush_caches = FALSE;
   $settings = [
+    [
+      'branding_bar',
+      'campus'
+    ],
     [
       'color_palette',
       'secondary_color',

@@ -19,6 +19,18 @@ function iu_preprocess_html(&$variables) {
 function iu_preprocess_page(&$variables) {
   $off_canvas_position = theme_get_setting('off_canvas_position');
   $variables['off_canvas_position'] = !empty($off_canvas_position) ? $off_canvas_position : 'right';
+
+  $campus = theme_get_setting('campus');
+  $variables['campus'] = !empty($campus) ? $campus : 'iub';
+}
+
+/**
+ * Implements hook_preprocess_maintenance_page().
+ */
+function iu_preprocess_maintenance_page(&$variables) {
+
+  // Setup maintenance page with same variables as normal page.
+  iu_preprocess_page($variables);
 }
 
 /**

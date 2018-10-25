@@ -32,3 +32,18 @@ hide_home_breadcrumb: '1'
 # - left: Slide in from the left side
 # - right: Slide in from the right side
 off_canvas_position: right
+
+# Which university campus to link in the header branding bar.
+#
+# Possible values include:
+# - iu:    Indiana University (for iu.edu)
+# - iub:   IU Bloomington (for indiana.edu)
+# - iue:   IU East (for iue.edu)
+# - iuk:   IU Kokomo (for iuk.edu)
+# - iun:   IU Northwest (for iun.edu)
+# - iupui: IUPUI (for iupui.edu)
+# - ius:   IU Southeast (for ius.edu)
+# - iusb:  IU South Bend (for iusb.edu)
+# - iufw:  IU Fort Wayne (for iufw.edu)
+# - iupuc: IUPUC (for iupuc.edu)
+campus: iub
