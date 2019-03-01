@@ -1,0 +1,12 @@
+{#
+/**
+ * @file
+ * Default theme implementation for webform email wrapper template as HTML.
+ *
+ * Leverages the IU branded email template.
+ */
+#}
+{% extends '@iu/email/email-template.html.twig' %}
+{% block content %}
+{{ body|raw }}
+{% endblock %}

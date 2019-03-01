@@ -300,6 +300,24 @@ function iu_preprocess_pager(&$variables) {
 }
 
 /**
+ * Prepares variables for `webform-email-html.html.twig`.
+ */
+function iu_preprocess_webform_email_html(&$variables) {
+  // Prepare site and theme variables to pass along to the IU branded
+  // email-template.html.twig
+  $campus = theme_get_setting('campus');
+  $variables['campus'] = !empty($campus) ? $campus : 'iub';
+  $variables['site_name'] = \Drupal::config('system.site')->get('name');
+
+  // Use the webform submission URL as the "View online" link.
+  $variables['online_version_url'] = $variables['webform_submission']->toUrl('canonical', ['absolute' => TRUE]);
+
+  // Obtain the to address from the Webform email handler configuration.
+  $config = $variables['handler']->getEmailConfiguration();
+  $variables['to_mail'] = $config['to_mail'];
+}
+
+/**
  * Helper function exposes IU secondary color palette data in a
  * multidimensional array.
  *
