@@ -24,8 +24,3 @@ article {
 .panel-text>:last-child {
   margin-bottom: 0;
 }
-
-/* fix banner text color on dark bg */
-.bg-dark .banner--content .teaser {
-  color: #fff;
-}
