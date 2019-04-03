@@ -63,6 +63,14 @@ input[type=radio]+label {
   color: #da3116;
 }
 
+.form-required-marker {
+  display: none;
+}
+
+.form-required .form-required-marker {
+  display: inline;
+}
+
 .form-item-text-format-value + .filter-wrapper {
   margin-top: -1rem;
 }

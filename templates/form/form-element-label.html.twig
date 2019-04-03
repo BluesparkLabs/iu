@@ -22,6 +22,6 @@
 %}
 {% spaceless %}
   {% if title is not empty or required -%}
-    <label{{ attributes.addClass(classes) }}>{{ title }}{% if required %}&nbsp;<span class="required-marker">*</span>{% endif %}</label>
+    <label{{ attributes.addClass(classes) }}>{{ title }}&nbsp;<span class="required-marker form-required-marker">*</span></label>
   {% endif %}
 {% endspaceless %}
