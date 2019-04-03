@@ -109,3 +109,21 @@ span.field-prefix + input {
 span.field-prefix + input {
   margin-left: .5em
 }
+
+.webform-multiple-table [type=text],
+.webform-multiple-table [type=password],
+.webform-multiple-table [type=date],
+.webform-multiple-table [type=datetime],
+.webform-multiple-table [type=datetime-local],
+.webform-multiple-table [type=month],
+.webform-multiple-table [type=week],
+.webform-multiple-table [type=email],
+.webform-multiple-table [type=number],
+.webform-multiple-table [type=search],
+.webform-multiple-table [type=tel],
+.webform-multiple-table [type=time],
+.webform-multiple-table [type=url],
+.webform-multiple-table [type=color],
+.webform-multiple-table textarea {
+  margin-bottom: 0;
+}
