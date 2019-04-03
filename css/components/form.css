@@ -52,6 +52,8 @@ input[type=radio]+label {
   color: #847d7d;
 }
 
+.form-checkbox ~ .description,
+.form-radio ~ .description,
 .form-checkboxes + .description,
 .form-radios + .description {
   margin-top: 0;
@@ -97,4 +99,13 @@ button.link {
 button.link:hover,
 button.link:focus {
   color: #01426a;
+}
+
+span.field-prefix,
+span.field-prefix + input {
+  display: inline-block;
+  width: auto;
+}
+span.field-prefix + input {
+  margin-left: .5em
 }
