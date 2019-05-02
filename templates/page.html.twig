@@ -45,18 +45,37 @@
 
 {{ page.campus_alert }}
 
-{% include '@iu/parts/header.html.twig' %}
-
-<div id="toggles">
-  <div class="row pad">
-    {% if page.off_canvas|render|trim %}
-    <button class="button hide-for-large" data-toggle="offCanvas" aria-expanded="false" aria-controls="offCanvas">Menu</button>
-    {% endif %}
+<header id="header">
+  <div id="skipnav">
+    <ul>
+      <li><a href="#content">{{ 'Skip to Content'|t }}</a></li>
+      <li><a href="#nav-main">{{ 'Skip to Main Navigation'|t }}</a></li>
+      <li><a href="#search">{{ 'Skip to Search'|t }}</a></li>
+    </ul>
+    <hr>
   </div>
-</div>
 
-<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
-<div class="off-canvas-content" data-off-canvas-content>
+  {% include '@iu/parts/header.html.twig' %}
+
+  {# @todo implement google custom site search #}
+  {#
+  <div id="toggles">
+    <div class="row pad">
+      <a class="button search-toggle" href="/search" aria-controls="search" aria-expanded="false"><img src="//assets.iu.edu/search/3.2.x/search.png" alt="Open Search" /></a>
+    </div>
+  </div>
+  #}
+
+  {% if page.off_canvas|render|trim %}
+  <div id="offCanvas" class="hide-for-large" role="navigation" aria-label="Mobile">
+    <button class="menu-toggle button hide-for-large" data-toggle="iu-menu">Menu</button>
+    <div id="iu-menu" class="off-canvas position-{{ off_canvas_position }} off-canvas-items" data-off-canvas="" data-position="{{ off_canvas_position }}">
+      <div class="mobile off-canvas-list" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+        {{ page.off_canvas }}
+      </div>
+    </div>
+  </div>
+  {% endif %}
 
   {{ page.header }}
 
@@ -66,57 +85,53 @@
 
   {{ page.highlighted }}
 
-  {% set nav_class = page.section_nav|render|striptags|trim ? '' : 'no-section-nav'%}
-  <main role="main" class="{{ nav_class }}">
+</header>
 
-    {{ page.section_nav }}
+{% set nav_class = page.section_nav|render|striptags|trim ? '' : 'no-section-nav'%}
+<main class="{{ nav_class }}">
 
-    {{ page.help }}
+  {{ page.section_nav }}
 
-    {{ page.breadcrumb }}
+  {{ page.help }}
 
-    <a name="content" tabindex="-1"></a>
+  {{ page.breadcrumb }}
 
-    {{ page.page_title }}
+  <a name="content" tabindex="-1"></a>
 
-    {{ page.local_tasks }}
+  {{ page.page_title }}
 
-    {{ page.content }}
+  {{ page.local_tasks }}
 
-    {{ page.content_fullwidth }}
+  {{ page.content }}
 
-  </main>
+  {{ page.content_fullwidth }}
 
-  {% if page.belt_nav|render|trim or page.belt_social_media|render|trim %}
-  <div class="section bg-mahogany bg-dark dark belt"><div class="row pad">
+</main>
 
-    <div class="one-half belt-nav">
-      {{ page.belt_nav }}
+{% if page.belt_nav|render|trim or page.belt_social_media|render|trim %}
+<div aria-label="Social media channels" class="section bg-mahogany bg-dark dark belt" role="complementary"><div class="row pad">
+
+  <div class="one-half belt-nav">
+    {{ page.belt_nav }}
+  </div>
+
+  <div class="one-half belt-social-media">
+    <div class="border invert">
+      {{ page.belt_social_media }}
     </div>
+  </div>
 
-    <div class="one-half belt-social-media">
-      <div class="border invert">
-        {{ page.belt_social_media }}
-      </div>
-    </div>
+</div></div>
+{% endif %}
 
-  </div></div>
-  {% endif %}
+{% if page.skirt_nav|render|trim or page.skirt_connect|render|trim %}
+<div aria-label="Additional links and resources" class="section bg-mahogany bg-dark dark skirt" role="complementary"><div class="row pad">
 
-  {% if page.skirt_nav|render|trim or page.skirt_connect|render|trim %}
-  <div class="section bg-mahogany bg-dark dark skirt"><div class="row pad">
+  {{ page.skirt_nav }}
 
-    {{ page.skirt_nav }}
+  {{ page.skirt_connect }}
 
-    {{ page.skirt_connect }}
+</div></div>
+{% endif %}
 
-  </div></div>
-  {% endif %}
-
-  {% include '@iu/parts/footer.html.twig' %}
-
-</div>{# /.off-canvas-content #}</div>{# /.off-canvas-wrapper-inner #}
-
-<div id="offCanvas" class="off-canvas position-{{ off_canvas_position }}" data-off-canvas="" data-position="{{ off_canvas_position }}">
-  {{ page.off_canvas }}
-</div>
+{% include '@iu/parts/footer.html.twig' %}
