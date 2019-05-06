@@ -155,7 +155,7 @@ function iu_preprocess_menu(&$variables) {
     }
 
     @$first = &reset($variables['items']);
-    if ($first['url']->isRouted() && $first['url']->getRouteName() == '<front>') {
+    if ($first['title'] == 'Home' || ($first['url']->isRouted() && $first['url']->getRouteName() == '<front>')) {
       $first['attributes']->addClass('show-on-sticky home');
       $has_home = TRUE;
     }
