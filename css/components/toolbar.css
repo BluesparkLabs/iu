@@ -23,13 +23,15 @@
 
 .toolbar-loading #toggles,
 .toolbar-loading #branding-bar,
+.toolbar-loading #offCanvas,
 .toolbar-loading nav.main {
   z-index: 1251;
 }
 
 @media only screen and (max-width: 976px) {
-  .toolbar-fixed:not(.toolbar-loading) #toggles,
-  .toolbar-fixed:not(.toolbar-loading) #branding-bar {
+  .toolbar-fixed #toggles,
+  .toolbar-fixed #branding-bar,
+  .toolbar-fixed #offCanvas {
     top: 39px !important;
   }
 
@@ -38,50 +40,36 @@
     width: auto;
   }
 
-  .toolbar-fixed:not(.toolbar-loading) .off-canvas {
-    top: 89px !important;
-  }
-
   .toolbar-fixed.toolbar-horizontal.toolbar-tray-open:not(.toolbar-loading) #toggles,
-  .toolbar-fixed.toolbar-horizontal.toolbar-tray-open:not(.toolbar-loading) #branding-bar {
+  .toolbar-fixed.toolbar-horizontal.toolbar-tray-open:not(.toolbar-loading) #branding-bar,
+  .toolbar-fixed.toolbar-horizontal.toolbar-tray-open:not(.toolbar-loading) #offCanvas {
     top: 79px !important;
-  }
-
-  .toolbar-fixed.toolbar-horizontal.toolbar-tray-open:not(.toolbar-loading) .off-canvas {
-    top: 130px !important;
   }
 }
 
 @media only screen and (min-width: 977px) and (max-width: 1024px) {
   .toolbar-fixed #toggles,
-  .toolbar-fixed #branding-bar {
+  .toolbar-fixed #branding-bar,
+  .toolbar-fixed #offCanvas {
     top: 39px !important;
   }
 
-  .toolbar-fixed .off-canvas {
-    top: 89px !important;
-  }
-
   .toolbar-fixed.toolbar-horizontal.toolbar-tray-open #toggles,
-  .toolbar-fixed.toolbar-horizontal.toolbar-tray-open #branding-bar {
+  .toolbar-fixed.toolbar-horizontal.toolbar-tray-open #branding-bar,
+  .toolbar-fixed.toolbar-horizontal.toolbar-tray-open #offCanvas {
     top: 79px !important;
-  }
-
-  .toolbar-fixed.toolbar-horizontal.toolbar-tray-open .off-canvas {
-    top: 130px !important;
   }
 }
 
 @media only screen and (max-width: 1024px) {
   .toolbar-loading #toggles,
   .toolbar-loading #branding-bar,
+  .toolbar-loading #offCanvas,
   .toolbar-vertical:not(.toolbar-fixed) #toggles,
-  .toolbar-vertical:not(.toolbar-fixed) #branding-bar {
+  .toolbar-vertical:not(.toolbar-fixed) #branding-bar,
+  .toolbar-vertical:not(.toolbar-fixed) #offCanvas {
     position: absolute;
     top: 39px;
-  }
-  .toolbar-vertical:not(.toolbar-fixed) .off-canvas {
-    top: 88px;
   }
 }
 
@@ -89,7 +77,16 @@
   .toolbar-fixed:not(.toolbar-loading) nav.main.is-sticky {
     top: 39px !important;
   }
+
   .toolbar-fixed.toolbar-horizontal.toolbar-tray-open:not(.toolbar-loading) nav.main.is-sticky {
     top: 79px !important;
+  }
+
+  .toolbar-fixed:not(.toolbar-loading) .nav-secondary {
+    top: 127px !important; /* 88 + 39 */
+  }
+
+  .toolbar-fixed.toolbar-horizontal.toolbar-tray-open:not(.toolbar-loading) .nav-secondary {
+    top: 167px !important; /* 88 + 79 */
   }
 }
