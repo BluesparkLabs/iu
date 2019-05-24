@@ -31,10 +31,15 @@ li {
 /* Enable the 'Styles' widget in CKEditor and add the following to the configuration:
 
 a.button|Button
+a.button.invert|Inverted Button
 a.button.large|Large Button
+a.button.large.invert|Large Inverted Button
 a.button.small|Small Button
+a.button.small.invert|Small Inverted Button
 a.button.tiny|Tiny Button
+a.button.tiny.invert|Tiny Inverted Button
 a.button.expanded|Expanded Button
+a.button.expanded.invert|Expanded Inverted Button
 a.button.primary|Primary Button
 a.button.secondary|Secondary Button
 a.button.success|Success Button
