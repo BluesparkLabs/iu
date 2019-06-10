@@ -41,4 +41,5 @@ li.feed-item > article::after {
   margin: 0;
   width: 100%;
   padding: 0;
+  max-width: 100%;
 }
