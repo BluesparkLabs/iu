@@ -316,6 +316,11 @@ function iu_preprocess_webform_email_html(&$variables) {
   // Obtain the to address from the Webform email handler configuration.
   $config = $variables['handler']->getEmailConfiguration();
   $variables['to_mail'] = $config['to_mail'];
+
+  // Work around for plaintext token for site:mail
+  if ($config['to_mail'] === '[site:mail]') {
+    $variables['to_mail'] = \Drupal::config('system.site')->get('mail');
+  }
 }
 
 /**
