@@ -1,0 +1,7 @@
+/**
+ * Requird for nav-secondary to keep its place when toolbar or site alert
+ * is enabled.
+ */
+#header {
+  position: relative;
+}

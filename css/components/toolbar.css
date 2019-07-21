@@ -81,12 +81,4 @@
   .toolbar-fixed.toolbar-horizontal.toolbar-tray-open:not(.toolbar-loading) nav.main.is-sticky {
     top: 79px !important;
   }
-
-  .toolbar-fixed:not(.toolbar-loading) .nav-secondary {
-    top: 127px !important; /* 88 + 39 */
-  }
-
-  .toolbar-fixed.toolbar-horizontal.toolbar-tray-open:not(.toolbar-loading) .nav-secondary {
-    top: 167px !important; /* 88 + 79 */
-  }
 }
