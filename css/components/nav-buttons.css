@@ -19,7 +19,7 @@ nav.main .button.invert {
   color: #900;
 }
 nav.main.is-sticky .button {
-  margin: 8px 0;
+  margin: -8px 0;
 }
 nav.main.is-sticky .button:focus,
 nav.main.is-sticky .button:hover {
