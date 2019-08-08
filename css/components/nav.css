@@ -6,3 +6,8 @@ nav.main:not(.is-sticky) ul {
 nav.main:not(.is-sticky) li {
   flex: 1 1 auto;
 }
+
+/* this IU Framework CSS override is needed for proper nav button styles */
+nav.main li {
+  vertical-align: middle;
+}
