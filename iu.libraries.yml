@@ -13,8 +13,6 @@ global-styling:
       css/components/marker.css: {}
   js:
     js/init.js: {}
-  dependencies:
-    - iu/iu-framework
 
 address:
   css:
@@ -114,7 +112,10 @@ modernizr:
   js:
     //assets.iu.edu/web/1.5/libs/modernizr.min.js: { type: external, minified: true }
 
-iu-framework:
+# By default, we depend on the latest production release of the IU Framework
+# assets. However, this can be overridden to use the dev release in your site's
+# settings.local.php file. Eg, $settings['iu_framework_assets'] = 'dev';
+iu-framework-prod:
   css:
     base:
       //assets.iu.edu/web/3.2.x/css/iu-framework.min.css: { type: external, minified: true }
@@ -127,11 +128,33 @@ iu-framework:
     - core/jquery
     - iu/modernizr
 
-search:
+iu-framework-dev:
+  css:
+    base:
+      //assets.iu.edu/web/3.2.x-dev/css/iu-framework.min.css: { type: external, minified: true }
+      //assets.iu.edu/web/fonts/icon-font.css: {type: external, minified: true }
+    component:
+      //assets.iu.edu/brand/3.2.x-dev/brand.min.css: { type: external, minified: true }
+  js:
+    //assets.iu.edu/web/3.2.x-dev/js/iu-framework.min.js: { type: external, minified: true }
+  dependencies:
+    - core/jquery
+    - iu/modernizr
+
+search-prod:
   css:
     component:
       //assets.iu.edu/search/3.2.x/search.min.css: { type: external, minified: true }
   js:
     //assets.iu.edu/search/3.2.x/search.min.js: { type: external, minified: true }
   dependencies:
-    - iu/iu-framework
+    - iu/iu-framework-prod
+
+search-dev:
+  css:
+    component:
+      //assets.iu.edu/search/3.2.x-dev/search.min.css: { type: external, minified: true }
+  js:
+    //assets.iu.edu/search/3.2.x-dev/search.min.js: { type: external, minified: true }
+  dependencies:
+    - iu/iu-framework-dev
