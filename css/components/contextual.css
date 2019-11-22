@@ -54,3 +54,8 @@
 nav.main.is-sticky {
   z-index: 600 !important;
 }
+
+/* Ensures toolbar dropdowns appear above sticky IU top menu */
+.toolbar-tray-horizontal ul li.menu-item--expanded.hover-intent ul {
+  z-index: 601 !important;
+}
