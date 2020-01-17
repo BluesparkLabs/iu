@@ -2,6 +2,7 @@
 
 use Drupal\block\Entity\Block;
 use Drupal\Core\Site\Settings;
+use Drupal\Core\Url;
 use Drupal\Component\Utility\Html;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 
@@ -334,14 +335,34 @@ function iu_preprocess_webform_email_html(&$variables) {
   // Use the webform submission URL as the "View online" link.
   $variables['online_version_url'] = $variables['webform_submission']->toUrl('canonical', ['absolute' => TRUE]);
 
-  // Obtain the to address from the Webform email handler configuration.
-  $config = $variables['handler']->getEmailConfiguration();
-  $variables['to_mail'] = $config['to_mail'];
+  // Expose the message array to the Twig template. Remove some array keys of
+  // elements that are already exposed to Twig. Why this is not exposed
+  // by default is beyond reason.
+  $handler = $variables['handler'];
+  $webform_submission = $variables['webform_submission'];
+  $message = $handler->getMessage($webform_submission);
+  unset($message['webform_submission']);
+  unset($message['handler']);
+  $variables['message'] = $message;
 
-  // Work around for plaintext token for site:mail
-  if ($config['to_mail'] === '[site:mail]') {
-    $variables['to_mail'] = \Drupal::config('system.site')->get('mail');
-  }
+  // Expose the sender and recipient info to the Twig template.
+  $variables['to_mail'] = $message['to_mail'];
+  $variables['from_mail'] = $message['from_mail'];
+  $variables['from_name'] = $message['from_name'];
+
+  // Expose the form name to the Twig template. Again, no idea why this is
+  // not available out of the box.
+  $webform = $handler->getWebform();
+  $variables['form_name'] = $webform->label();
+
+  // Provide the absolute path to the current page where the Webform is
+  // embedded. We use Drupal path service and alias manager instead of just
+  // using Drupal::request()->getRequestUri() because the form submission
+  // may be done via ajax, which adds unnecessary parameters to the URL that
+  // should not be revealed in the notification emails.
+  $current_path = \Drupal::service('path.current')->getPath();
+  $path_alias = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
+  $variables['form_url'] = Url::fromUserInput($path_alias,  array('absolute' => 'true'))->toString();
 }
 
 /**
