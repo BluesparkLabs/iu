@@ -350,10 +350,11 @@ function iu_preprocess_webform_email_html(&$variables) {
   $variables['from_mail'] = $message['from_mail'];
   $variables['from_name'] = $message['from_name'];
 
-  // Expose the form name to the Twig template. Again, no idea why this is
-  // not available out of the box.
+  // Expose the form name and id to the Twig template. Again, no idea why
+  // this is not available out of the box.
   $webform = $handler->getWebform();
   $variables['form_name'] = $webform->label();
+  $variables['form_id'] = $webform->id();
 
   // Provide the absolute path to the current page where the Webform is
   // embedded. We use Drupal path service and alias manager instead of just
