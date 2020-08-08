@@ -22,7 +22,7 @@
 
   {% include '@iu/parts/header.html.twig' %}
 
-  <div class="site-header" itemscope="itemscope" itemtype="http://schema.org/CollegeOrUniversity"><div class="row pad">
+  <div class="site-header visually-hidden" itemscope="itemscope" itemtype="http://schema.org/CollegeOrUniversity"><div class="row pad">
 
     <h1>
       <a class="title" href="{{ front_page }}" itemprop="department">{{ site_name }}</a>
@@ -47,12 +47,12 @@
   {{ page.breadcrumb }}
 
   {% if title %}
-  <div class="section page-title bg-none"><div class="row"><div class="layout">
+  <div class="section text-center bg-none"><div class="row"><div class="layout">
     <h1>{{ title }}</h1>
   </div></div></div>
   {% endif %}
 
-  <div class="section bg-none" id="content"><div class="row"><div class="layout">
+  <div class="section text text-center bg-none" id="content"><div class="row"><div class="layout">
     {{ page.content }}
   </div></div></div>
 </main>

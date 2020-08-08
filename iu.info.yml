@@ -8,6 +8,7 @@ core: 8.x
 
 libraries:
   - iu/global-styling
+  - iu/iu-framework-prod
 
 libraries-extend:
   # Improve interoperability between IU Framework and various Drupal features.

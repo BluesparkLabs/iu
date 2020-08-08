@@ -14,15 +14,14 @@ function iu_page_attachments_alter(array &$attachments) {
   // Permit developers to load the dev version of the IU Framework dependency
   // via a config override in settings.php or settings.local.php
   // E.g. $settings['iu_framework_assets'] = 'dev';
-  switch (Settings::get('iu_framework_assets', 'prod')) {
-    case 'dev':
-      $attachments['#attached']['library'][] = 'iu/iu-framework-dev';
-      break;
-
-    case 'prod':
-    default:
-      $attachments['#attached']['library'][] = 'iu/iu-framework-prod';
-      break;
+  $prod_library = 'iu/iu-framework-prod';
+  $dev_library = 'iu/iu-framework-dev';
+  if (Settings::get('iu_framework_assets', 'prod') == 'dev') {
+    if (in_array($prod_library, $attachments['#attached']['library'])) {
+      $index = array_search($prod_library, $attachments['#attached']['library']);
+      unset($attachments['#attached']['library'][$index]);
+      $attachments['#attached']['library'][] = $dev_library;
+    }
   }
 }
 
