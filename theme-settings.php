@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Add custom theme settings to the IU Framework theme.
@@ -22,7 +23,7 @@ function iu_form_system_theme_settings_alter(&$form, FormStateInterface &$form_s
     '#open' => TRUE,
   ];
 
-  $form['breadcrumbs']['hide_home_breadcrumb'] = array(
+  $form['breadcrumbs']['hide_home_breadcrumb'] = [
     '#type' => 'radios',
     '#options' => [
       '0' => 'Show <em>Home</em> in breadcrumb trail (Drupal’s default behavior)',
@@ -30,7 +31,7 @@ function iu_form_system_theme_settings_alter(&$form, FormStateInterface &$form_s
       '2' => 'Remove <em>Home</em> when it is the only breadcrumb in trail',
     ],
     '#default_value' => theme_get_setting('hide_home_breadcrumb'),
-  );
+  ];
 
   $form['branding_bar'] = [
     '#type' => 'details',
@@ -39,7 +40,7 @@ function iu_form_system_theme_settings_alter(&$form, FormStateInterface &$form_s
     '#description' => '<p>' . t('Specify which campus should be linked in the header.') . '</p>',
   ];
 
-  $form['branding_bar']['campus'] = array(
+  $form['branding_bar']['campus'] = [
     '#type' => 'radios',
     '#options' => [
       'iu'    => 'Indiana University (iu.edu)',
@@ -55,7 +56,7 @@ function iu_form_system_theme_settings_alter(&$form, FormStateInterface &$form_s
     ],
     '#description' => 'The header branding bar features the Block IU in a red bar and goes at the top of every page of your website. Each campus has its own branding bar, but only the name and link change.',
     '#default_value' => theme_get_setting('campus'),
-  );
+  ];
 
   $form['off_canvas'] = [
     '#type' => 'details',
@@ -64,23 +65,23 @@ function iu_form_system_theme_settings_alter(&$form, FormStateInterface &$form_s
   ];
 
   $off_canvas_position = theme_get_setting('off_canvas_position') ?: 'right';
-  $form['off_canvas']['off_canvas_position'] = array(
+  $form['off_canvas']['off_canvas_position'] = [
     '#type' => 'radios',
     '#options' => [
       'right' => 'Slide in from right side (IU Framework’s default behavior)',
       'left' => 'Slide in from left side',
     ],
     '#default_value' => $off_canvas_position,
-  );
+  ];
 
   $colors = _iu_secondary_color_palette_options();
   $options = [];
 
   foreach ($colors as $key => $color) {
     $options[$key] = '
-<div class="color-block '. $color['class'] . '">
+<div class="color-block ' . $color['class'] . '">
   <div class="color-name">' . $color['name'] . '</div>
-  <div class="color-details">HEX: '. $color['hex'] .'</div>
+  <div class="color-details">HEX: ' . $color['hex'] . '</div>
 </div>
     ';
   }
@@ -114,7 +115,7 @@ function iu_form_system_theme_settings_validate($form, FormStateInterface $form_
   $settings = [
     [
       'branding_bar',
-      'campus'
+      'campus',
     ],
     [
       'color_palette',
