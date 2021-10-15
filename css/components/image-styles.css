@@ -21,7 +21,7 @@
 
 /* IU Framework sets bottom margin on figure.media container. */
 figure.media img {
-  margin-bottom: 0; /* Removes the bottom margine set on image styles above. */
+  margin-bottom: 0; /* Removes the bottom margin set on image styles above. */
 }
 
 @media screen and (min-width: 40em) {
@@ -37,7 +37,7 @@ figure.media img {
   .align-right .image-style-iu-two-thirds,
   .align-right .image-style-iu-two-thirds-screen,
   .align-right .image-style-iu-two-thirds-standard {
-    padding-left: .75rem;
+    padding-left: 0.75rem;
     margin-bottom: 0;
   }
 
@@ -53,7 +53,7 @@ figure.media img {
   .align-left .image-style-iu-two-thirds,
   .align-left .image-style-iu-two-thirds-screen,
   .align-left .image-style-iu-two-thirds-standard {
-    padding-right: .75rem;
+    padding-right: 0.75rem;
     margin-bottom: 0;
   }
 

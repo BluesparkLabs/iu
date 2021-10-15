@@ -5,12 +5,12 @@ a.tabledrag-handle {
   border: 1px solid transparent;
   border-radius: 4px;
   background: transparent;
-  transition: all .2s;
+  transition: all 0.2s;
 }
 a.tabledrag-handle .handle,
 a.tabledrag-handle:hover .handle,
 a.tabledrag-handle:focus .handle {
-  background: url('../../images/drag_handle.svg') no-repeat 50% 50%;
+  background: url("../../images/drag_handle.svg") no-repeat 50% 50%;
   padding: 18px;
   margin-left: 0;
   margin-right: 0;
@@ -20,9 +20,9 @@ a.tabledrag-handle:hover,
 a.tabledrag-handle:focus {
   background-color: #f9f8f6;
   border: 1px solid #a6a6a6;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, .125);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.125);
   outline: none;
-  transition: all .2s;
+  transition: all 0.2s;
 }
 
 .js .tabledrag-toggle-weight-wrapper {
@@ -35,12 +35,12 @@ abbr[title].tabledrag-changed {
 }
 
 table.field-multiple-table {
-  margin-bottom: .6em;
+  margin-bottom: 0.6em;
 }
 
 table.field-multiple-table tbody {
-  border: 1px solid rgba(221, 221, 221, .5);
-  background-color: rgba(254, 254, 254, .7);
+  border: 1px solid rgba(221, 221, 221, 0.5);
+  background-color: rgba(254, 254, 254, 0.7);
 }
 
 table.field-multiple-table thead {
@@ -83,7 +83,7 @@ td.field-multiple-drag .tabledrag-changed {
 tr.draggable.drag td.field-multiple-drag::after,
 tr.draggable.drag-previous td.field-multiple-drag::after {
   position: absolute;
-  content: '';
+  content: "";
   display: block;
   left: -1px;
   top: 0;
@@ -99,7 +99,7 @@ td.delta-order {
 
 tr.drag {
   display: table-row;
-  box-shadow: 0 0 3px rgba(0, 0, 0, .4);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
   z-index: 100;
 }
 

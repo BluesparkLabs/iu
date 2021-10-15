@@ -12,7 +12,7 @@
 }
 
 .vertical-tabs__panes {
-  padding: .6rem 0 .6rem 2rem;
+  padding: 0.6rem 0 0.6rem 2rem;
 }
 
 .vertical-tabs__menu-item {
@@ -29,8 +29,8 @@
   display: block;
   color: #4a3c31;
   border-bottom: 1px solid #fff;
-  padding: .5rem 1rem;
-  transition: all .3s;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s;
 }
 
 .vertical-tabs__menu-item a:hover,
@@ -41,7 +41,7 @@
 }
 
 .vertical-tabs__menu-item.is-selected a::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   bottom: 0;
@@ -55,7 +55,7 @@
   color: #4a3c31;
   font-family: BentonSans, Arial, sans-serif;
   font-weight: 400;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .vertical-tabs__menu-item a:focus .vertical-tabs__menu-item-title,

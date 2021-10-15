@@ -15,21 +15,15 @@
   border-radius: 10em;
   background-color: #f2f1eb;
   background-image: -webkit-linear-gradient(#e7e7df, #f0f0f0);
-  background-image:         linear-gradient(#e7e7df, #f0f0f0);
+  background-image: linear-gradient(#e7e7df, #f0f0f0);
   box-shadow: inset 0 1px 3px hsla(0, 0%, 0%, .16);
 }
 .progress__bar {
   border: 1px #007527 solid;
   background: #008a2e;
-  background-image:
-    -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, .15)),
-    -webkit-linear-gradient(left top, #009933 0%, #009933 25%, #00802b 25%, #00802b 50%, #009933 50%, #009933 75%, #009933 100%);
-  background-image:
-    -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, .15)),
-    -webkit-linear-gradient(left top, #009933 0%, #009933 25%, #00802b 25%, #00802b 50%, #009933 50%, #009933 75%, #009933 100%);
-  background-image:
-    linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, .15)),
-    linear-gradient(to right bottom, #009933 0%, #009933 25%, #00802b 25%, #00802b 50%, #009933 50%, #009933 75%, #009933 100%);
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, .15)), -webkit-linear-gradient(left top, #009933 0%, #009933 25%, #00802b 25%, #00802b 50%, #009933 50%, #009933 75%, #009933 100%);
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, .15)), -webkit-linear-gradient(left top, #009933 0%, #009933 25%, #00802b 25%, #00802b 50%, #009933 50%, #009933 75%, #009933 100%);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, .15)), linear-gradient(to right bottom, #009933 0%, #009933 25%, #00802b 25%, #00802b 50%, #009933 50%, #009933 75%, #009933 100%);
   background-size: 40px 40px;
   margin-top: -1px;
   margin-left: -1px; /* LTR */
@@ -52,17 +46,26 @@
  * Progress bar animations.
  */
 @-webkit-keyframes animate-stripes {
-  0% { background-position: 0 0, 0 0; }
-  100% { background-position: 0 0, -80px 0; }
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 0 0, -80px 0;
+  }
 }
 @-ms-keyframes animate-stripes {
-  0% { background-position: 0 0, 0 0; }
-  100% { background-position: 0 0, -80px 0; }
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 0 0, -80px 0;
+  }
 }
 @keyframes animate-stripes {
-  0% { background-position: 0 0, 0 0; }
-  100% { background-position: 0 0, -80px 0; }
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 0 0, -80px 0;
+  }
 }
-
-
-

@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Functions to support theming in the IU theme.
+ */
+
 use Drupal\block\Entity\Block;
 use Drupal\Core\Site\Settings;
 use Drupal\Core\Url;
@@ -13,7 +18,7 @@ function iu_page_attachments_alter(array &$attachments) {
 
   // Permit developers to load the dev version of the IU Framework dependency
   // via a config override in settings.php or settings.local.php
-  // E.g. $settings['iu_framework_assets'] = 'dev';
+  // E.g. $settings['iu_framework_assets'] = 'dev';.
   $prod_library = 'iu/iu-framework-prod';
   $dev_library = 'iu/iu-framework-dev';
   if (Settings::get('iu_framework_assets', 'prod') == 'dev') {
@@ -58,7 +63,7 @@ function iu_preprocess_maintenance_page(&$variables) {
 /**
  * Implements hook_theme_suggestions_HOOK_alter() for blocks.
  */
-function iu_theme_suggestions_block_alter(array &$suggestions, array $variables){
+function iu_theme_suggestions_block_alter(array &$suggestions, array $variables) {
 
   // Add a template suggestion for blocks based on region and block type.
   if (isset($variables['elements']['#id'])) {
@@ -67,7 +72,7 @@ function iu_theme_suggestions_block_alter(array &$suggestions, array $variables)
     $base_plugin_id = $variables['elements']['#base_plugin_id'];
     $block = Block::load($block_id);
 
-    // Use the same templates for both system menu blocks and menu_block
+    // Use the same templates for both system menu blocks and menu_block.
     if ($base_plugin_id == 'system_menu_block') {
       $base_plugin_id = 'menu_block';
     }
@@ -75,7 +80,7 @@ function iu_theme_suggestions_block_alter(array &$suggestions, array $variables)
     if ($block) {
       $region = $block->getRegion();
       $suggestions[] = $variables['theme_hook_original'] . '__' . $region;
-      $suggestions[] = $variables['theme_hook_original'] . '__' . $region  . '__' . $base_plugin_id;
+      $suggestions[] = $variables['theme_hook_original'] . '__' . $region . '__' . $base_plugin_id;
     }
   }
 }
@@ -83,7 +88,7 @@ function iu_theme_suggestions_block_alter(array &$suggestions, array $variables)
 /**
  * Prepares variables for `block.html.twig`.
  */
-function iu_preprocess_block(&$variables){
+function iu_preprocess_block(&$variables) {
 
   // Pass the region name via a custom data attribute for usage in
   // hook_preprocess_menu.
@@ -97,9 +102,14 @@ function iu_preprocess_block(&$variables){
 
       $block_class = '';
       // Create an HTML class based on the menu ID.
-      if (!empty($variables['elements']['#base_plugin_id']) &&
+      if (
+        !empty($variables['elements']['#base_plugin_id']) &&
         !empty($variables['elements']['#derivative_plugin_id']) &&
-        in_array($variables['elements']['#base_plugin_id'], ['menu_block', 'system_menu_block'])) {
+        in_array($variables['elements']['#base_plugin_id'], [
+          'menu_block',
+          'system_menu_block',
+        ])
+      ) {
 
         $menu_id = $variables['elements']['#derivative_plugin_id'];
 
@@ -125,14 +135,14 @@ function iu_preprocess_block(&$variables){
 /**
  * Prepares variables for `breadcrumb.html.twig`.
  */
-function iu_preprocess_breadcrumb(&$variables){
+function iu_preprocess_breadcrumb(&$variables) {
 
   // Remove 'Home' from breadcrumb trail based on theme settings variable.
   //
   // Possible values:
   // - 0: do not remove
   // - 1: remove
-  // - 2: remove if its the only item
+  // - 2: remove if its the only item.
   $hide_home_breadcrumb = theme_get_setting('hide_home_breadcrumb');
   if ($hide_home_breadcrumb == '1' && count($variables['breadcrumb'])) {
     array_shift($variables['breadcrumb']);
@@ -153,7 +163,7 @@ function iu_preprocess_menu(&$variables) {
   // hook_preprocess_block.
   $region = '';
   if (!empty($variables['attributes']['data-region'])) {
-    $region  = $variables['attributes']['data-region'];
+    $region = $variables['attributes']['data-region'];
     unset($variables['attributes']['data-region']);
   }
 
@@ -188,7 +198,7 @@ function iu_preprocess_menu(&$variables) {
   foreach ($variables['items'] as &$item) {
     // The order of these if/elseifs are relevent, and prevent "last two" or
     // "first two-left" appearing on the same element.
-    if (($i == $count && !$has_search) || ($i == ($count-1) && $has_search)) {
+    if (($i == $count && !$has_search) || ($i == ($count - 1) && $has_search)) {
       $item['attributes']->addClass('last');
     }
     elseif (($i == 2 && !$has_home) || ($i == 3 && $has_home)) {
@@ -197,7 +207,7 @@ function iu_preprocess_menu(&$variables) {
     if (($i == 1 && !$has_home) || ($i == 2 && $has_home)) {
       $item['attributes']->addClass('first');
     }
-    elseif (($i == ($count-1) && !$has_search) || ($i == ($count-2) && $has_search)) {
+    elseif (($i == ($count - 1) && !$has_search) || ($i == ($count - 2) && $has_search)) {
       $item['attributes']->addClass('two-left');
     }
     $i++;
@@ -218,7 +228,7 @@ function iu_preprocess_menu_local_task(&$variables) {
 function iu_preprocess_node(&$variables) {
   static $cacheable_metadata_list = [];
   $blockRepository = \Drupal::service('block.repository');
-  /** @var $blocks \Drupal\block\BlockInterface[] */
+  /** @var \Drupal\block\BlockInterface[] $blocks */
   $blocks = $blockRepository->getVisibleBlocksPerRegion($cacheable_metadata_list);
   $variables['has_page_title'] = (isset($blocks['page_title']) && !empty($blocks['page_title']));
 }
@@ -268,7 +278,7 @@ function iu_preprocess_input(&$variables) {
     }
   }
 
-  if(!empty($classes) && in_array('error', $classes)) {
+  if (!empty($classes) && in_array('error', $classes)) {
     $classes[] = 'is-invalid-input';
   }
 }
@@ -282,11 +292,12 @@ function iu_preprocess_input__submit(&$variables) {
     $classes[] = 'small invert no-margin';
   }
 }
+
 /**
  * Prepares variables for `input--submit--paragraph-action.html.twig`.
  */
 function iu_preprocess_input__submit__paragraph_action(&$variables) {
-  //var_dump($variables);
+  // var_dump($variables);
   $classes = &$variables['attributes']['class'];
   if (in_array('paragraphs-dropdown-action', $classes)) {
     $classes[] = 'tiny secondary hollow no-margin';
@@ -326,7 +337,7 @@ function iu_preprocess_pager(&$variables) {
  */
 function iu_preprocess_webform_email_html(&$variables) {
   // Prepare site and theme variables to pass along to the IU branded
-  // email-template.html.twig
+  // email-template.html.twig.
   $campus = theme_get_setting('campus');
   $variables['campus'] = !empty($campus) ? $campus : 'iub';
   $variables['site_name'] = \Drupal::config('system.site')->get('name');
@@ -362,103 +373,102 @@ function iu_preprocess_webform_email_html(&$variables) {
   // should not be revealed in the notification emails.
   $current_path = \Drupal::service('path.current')->getPath();
   $path_alias = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
-  $variables['form_url'] = Url::fromUserInput($path_alias,  array('absolute' => 'true'))->toString();
+  $variables['form_url'] = Url::fromUserInput($path_alias, ['absolute' => 'true'])->toString();
 }
 
 /**
- * Helper function exposes IU secondary color palette data in a
- * multidimensional array.
+ * Helper to expose IU secondary color palette data.
  *
  * @see https://styleguide.iu.edu/visual-style/colors.html
  */
 function _iu_secondary_color_palette_options() {
   return [
     'crimson' => [
-      'name'=>'Crimson',
+      'name' => 'Crimson',
       'hex' => '#990000',
       'class' => 'bg-crimson bg-dark',
       'is_dark' => TRUE,
     ],
     'gray' => [
-      'name'=>'Light Gray',
+      'name' => 'Light Gray',
       'hex' => '#edebeb',
       'class' => 'bg-gray',
       'is_dark' => FALSE,
     ],
     'gold-dark' => [
-      'name'=>'Dark Gold',
+      'name' => 'Dark Gold',
       'hex' => '#dc8823',
       'class' => 'bg-gold-dark',
       'is_dark' => FALSE,
     ],
     'gold' => [
-      'name'=>'Gold',
+      'name' => 'Gold',
       'hex' => '#f1be48',
       'class' => 'bg-gold',
       'is_dark' => FALSE,
     ],
     'mint-dark' => [
-      'name'=>'Dark Mint',
+      'name' => 'Dark Mint',
       'hex' => '#285c4d',
       'class' => 'bg-mint-dark bg-dark',
       'is_dark' => TRUE,
     ],
     'mint' => [
-      'name'=>'Mint',
+      'name' => 'Mint',
       'hex' => '#008264',
       'class' => 'bg-mint bg-dark',
       'is_dark' => TRUE,
     ],
     'midnight-dark' => [
-      'name'=>'Dark Midnight',
+      'name' => 'Dark Midnight',
       'hex' => '#01426a',
       'class' => 'bg-midnight-dark bg-dark',
       'is_dark' => TRUE,
     ],
     'midnight' => [
-      'name'=>'Midnight',
+      'name' => 'Midnight',
       'hex' => '#006298',
       'class' => 'bg-midnight bg-dark',
       'is_dark' => TRUE,
     ],
     'majestic-dark' => [
-      'name'=>'Dark Majestic',
+      'name' => 'Dark Majestic',
       'hex' => '#512a44',
       'class' => 'bg-majestic-dark bg-dark',
       'is_dark' => TRUE,
     ],
     'majestic' => [
-      'name'=>'Majestic',
+      'name' => 'Majestic',
       'hex' => '#66435a',
       'class' => 'bg-majestic bg-dark',
       'is_dark' => TRUE,
     ],
     'limestone-dark' => [
-      'name'=>'Dark Limestone',
+      'name' => 'Dark Limestone',
       'hex' => '#83786f',
       'class' => 'bg-limestone-dark bg-dark',
       'is_dark' => TRUE,
     ],
     'limestone' => [
-      'name'=>'Limestone',
+      'name' => 'Limestone',
       'hex' => '#aca39a',
       'class' => 'bg-limestone',
       'is_dark' => FALSE,
     ],
     'black' => [
-      'name'=>'Black',
+      'name' => 'Black',
       'hex' => '#191919',
       'class' => 'bg-black bg-dark',
       'is_dark' => TRUE,
     ],
     'mahogany' => [
-      'name'=>'Mahogany',
+      'name' => 'Mahogany',
       'hex' => '#4a3c31',
       'class' => 'bg-mahogany bg-dark',
       'is_dark' => TRUE,
     ],
     'none' => [
-      'name'=>'None',
+      'name' => 'None',
       'hex' => '#fff',
       'class' => 'bg-none',
       'is_dark' => FALSE,

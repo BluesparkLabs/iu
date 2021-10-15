@@ -4,20 +4,20 @@
  * This ended up being easier than trying to get Drupal to change the active
  * link class.
  */
-nav.main li.current-trail > a:after,
-nav.main a.is-active:after {
+nav.main li.current-trail > a::after,
+nav.main a.is-active::after {
   width: 100%;
   background: #900;
   display: block;
 }
 
-nav.main.is-sticky li.current-trail > a:after,
-nav.main.is-sticky a.is-active:after {
+nav.main.is-sticky li.current-trail > a::after,
+nav.main.is-sticky a.is-active::after {
   background: #aca39a;
   display: block;
 }
 
-.section-nav a.is-active:before {
+.section-nav a.is-active::before {
   content: '';
   position: absolute;
   top: 0;
@@ -27,21 +27,21 @@ nav.main.is-sticky a.is-active:after {
   background: #900;
 }
 
-nav.main.dropdown li.current-trail > a:after,
-nav.main.dropdown li.current-trail > a:hover:after,
-nav.main.dropdown a.is-active:after,
-nav.main.dropdown a.is-active:hover:after {
+nav.main.dropdown li.current-trail > a::after,
+nav.main.dropdown li.current-trail > a:hover::after,
+nav.main.dropdown a.is-active::after,
+nav.main.dropdown a.is-active:hover::after {
   display: block;
 }
 
-nav.main.dropdown li li.current-trail > a:after,
-nav.main.dropdown li li.current-trail > a:hover:after,
-nav.main.dropdown li li a.is-active:after,
-nav.main.dropdown li li a.is-active:hover:after {
+nav.main.dropdown li li.current-trail > a::after,
+nav.main.dropdown li li.current-trail > a:hover::after,
+nav.main.dropdown li li a.is-active::after,
+nav.main.dropdown li li a.is-active:hover::after {
   display: none;
 }
 
-.off-canvas-list ul li a.is-active:before {
+.off-canvas-list ul li a.is-active::before {
   content: '';
   position: absolute;
   top: -1px;
@@ -53,19 +53,19 @@ nav.main.dropdown li li a.is-active:hover:after {
 
 .breadcrumbs li.is-active {
   color: #333;
-  position: absolute!important;
+  position: absolute !important;
   width: 1px;
   height: 1px;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0)
+  clip: rect(0, 0, 0, 0);
 }
 
-.form-item.alpha li.is-active a{
-  border-radius: 5px
+.form-item.alpha li.is-active a {
+  border-radius: 5px;
 }
 
 .filter.alpha li a.is-active,
 .form-item.alpha li a.is-active {
   background: #900;
-  color: #fff
+  color: #fff;
 }

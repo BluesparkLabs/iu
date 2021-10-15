@@ -4,7 +4,7 @@ nav.main .button {
   text-transform: none;
   margin: 0;
 }
-nav.main .button:after {
+nav.main .button::after {
   display: none !important;
 }
 nav.main .button:focus,
@@ -46,7 +46,7 @@ nav.mobile .button.invert:hover {
   color: #463c30;
   background-color: transparent;
   border-top: 1px solid #f6f5f5;
-  border-bottom: 0!important;
+  border-bottom: 0 !important;
   border-left: 3px solid transparent;
   border-right: 0;
   border-radius: 0;

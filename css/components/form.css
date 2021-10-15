@@ -1,4 +1,3 @@
-
 .fieldgroup {
   margin-bottom: 1rem;
 }
@@ -115,7 +114,7 @@ span.field-prefix + input {
   width: auto;
 }
 span.field-prefix + input {
-  margin-left: .5em
+  margin-left: .5em;
 }
 
 .webform-multiple-table [type=text],
