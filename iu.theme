@@ -372,7 +372,7 @@ function iu_preprocess_webform_email_html(&$variables) {
   // may be done via ajax, which adds unnecessary parameters to the URL that
   // should not be revealed in the notification emails.
   $current_path = \Drupal::service('path.current')->getPath();
-  $path_alias = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
+  $path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
   $variables['form_url'] = Url::fromUserInput($path_alias, ['absolute' => 'true'])->toString();
 }
 
