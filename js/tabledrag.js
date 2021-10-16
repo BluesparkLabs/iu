@@ -1,9 +1,9 @@
-(function ($, Drupal, drupalSettings) {
-
+(function ($, Drupal) {
   $.extend(Drupal.theme, {
     tableDragChangedWarning: function tableDragChangedWarning() {
-      return '<div class="tabledrag-changed-warning alert message" role="alert">' + Drupal.theme('tableDragChangedMarker') + ' ' + Drupal.t('You have unsaved changes.') + '</div>';
-    }
+      const marker = Drupal.theme("tableDragChangedMarker");
+      const message = Drupal.t("You have unsaved changes.");
+      return `<div class="tabledrag-changed-warning alert message" role="alert">${marker} ${message}</div>`;
+    },
   });
-
-})(jQuery, Drupal, drupalSettings);
+})(jQuery, Drupal);
