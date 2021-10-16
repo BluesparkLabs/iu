@@ -26,9 +26,9 @@ function iu_form_system_theme_settings_alter(&$form, FormStateInterface &$form_s
   $form['breadcrumbs']['hide_home_breadcrumb'] = [
     '#type' => 'radios',
     '#options' => [
-      '0' => 'Show <em>Home</em> in breadcrumb trail (Drupal’s default behavior)',
-      '1' => 'Remove <em>Home</em> from breadcrumb trail',
-      '2' => 'Remove <em>Home</em> when it is the only breadcrumb in trail',
+      '0' => t('Show %home in breadcrumb trail (Drupal’s default behavior)', ['%home' => 'Home']),
+      '1' => t('Remove %home from breadcrumb trail', ['%home' => 'Home']),
+      '2' => t('Remove %home when it is the only breadcrumb in trail', ['%home' => 'Home']),
     ],
     '#default_value' => theme_get_setting('hide_home_breadcrumb'),
   ];
@@ -54,7 +54,7 @@ function iu_form_system_theme_settings_alter(&$form, FormStateInterface &$form_s
       'iufw'  => 'IU Fort Wayne (iufw.edu)',
       'iupuc' => 'IUPUC (iupuc.edu)',
     ],
-    '#description' => 'The header branding bar features the Block IU in a red bar and goes at the top of every page of your website. Each campus has its own branding bar, but only the name and link change.',
+    '#description' => t('The header branding bar features the Block IU in a red bar and goes at the top of every page of your website. Each campus has its own branding bar, but only the name and link change.'),
     '#default_value' => theme_get_setting('campus'),
   ];
 
@@ -68,8 +68,8 @@ function iu_form_system_theme_settings_alter(&$form, FormStateInterface &$form_s
   $form['off_canvas']['off_canvas_position'] = [
     '#type' => 'radios',
     '#options' => [
-      'right' => 'Slide in from right side (IU Framework’s default behavior)',
-      'left' => 'Slide in from left side',
+      'right' => t('Slide in from right side (IU Framework’s default behavior)'),
+      'left' => t('Slide in from left side'),
     ],
     '#default_value' => $off_canvas_position,
   ];
@@ -98,7 +98,7 @@ function iu_form_system_theme_settings_alter(&$form, FormStateInterface &$form_s
     '#options' => $options,
     '#attributes' => ['class' => ['color-block-radios']],
     '#default_value' => theme_get_setting('secondary_color'),
-    '#description'   => t("In addition to the two primary background colors (crimson and light gray) available for use in your site sections, you may also select one additional secondary background color from the expanded IU Color Palette. Note: Crimson is Indiana University's main brand color and should always be used in greater frequency than any secondary color."),
+    '#description'   => t('In addition to the two primary background colors (crimson and light gray) available for use in your site sections, you may also select one additional secondary background color from the expanded IU Color Palette. Note: Crimson is Indiana University’s main brand color and should always be used in greater frequency than any secondary color.'),
     '#attached' => ['library' => ['iu/color-block']],
   ];
 
