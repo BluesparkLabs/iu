@@ -44,3 +44,19 @@ main {
 #footer {
   flex-shrink: 0;
 }
+
+/* Fix links colors inside text accordion on dark bg. Fixes IU/framework-issues #178 */
+.accordion-content a:not(.button),
+.bg-dark .accordion-content a:not(.button),
+.bg-secondary.bg-dark .accordion-content a:not(.button) {
+  color: #006298;
+}
+
+.accordion-content a:not(.button):hover,
+.accordion-content a:not(.button):focus,
+.bg-dark .accordion-content a:not(.button):hover,
+.bg-dark .accordion-content a:not(.button):focus,
+.bg-secondary.bg-dark .accordion-content a:not(.button):hover,
+.bg-secondary.bg-dark .accordion-content a:not(.button):focus {
+  color: #01426A;
+}
