@@ -131,12 +131,12 @@ iu-framework-prod:
 iu-framework-dev:
   css:
     base:
-      //assets.iu.edu/web/3.2.x-dev/css/iu-framework.min.css: { type: external, minified: true }
+      //assets.iu.edu/web/3.3.x-dev/css/iu-framework.min.css: { type: external, minified: true }
       //assets.iu.edu/web/fonts/icon-font.css: {type: external, minified: true }
     component:
-      //assets.iu.edu/brand/3.2.x-dev/brand.min.css: { type: external, minified: true }
+      //assets.iu.edu/brand/3.3.x-dev/brand.min.css: { type: external, minified: true }
   js:
-    //assets.iu.edu/web/3.2.x-dev/js/iu-framework.min.js: { type: external, minified: true }
+    //assets.iu.edu/web/3.3.x-dev/js/iu-framework.min.js: { type: external, minified: true }
   dependencies:
     - core/jquery
     - iu/modernizr
@@ -153,8 +153,8 @@ search-prod:
 search-dev:
   css:
     component:
-      //assets.iu.edu/search/3.2.x-dev/search.min.css: { type: external, minified: true }
+      //assets.iu.edu/search/3.3.x-dev/search.min.css: { type: external, minified: true }
   js:
-    //assets.iu.edu/search/3.2.x-dev/search.min.js: { type: external, minified: true }
+    //assets.iu.edu/search/3.3.x-dev/search.min.js: { type: external, minified: true }
   dependencies:
     - iu/iu-framework-dev
